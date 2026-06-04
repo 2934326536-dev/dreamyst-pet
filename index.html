@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dreamystpet — 专注马尔济斯、西施、约克夏的设计感裙装。法式浪漫少女风，手工蕾丝裙、重工珠片定制。">
+<title>Dreamystpet | 小型犬设计感裙装</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Reset & Base ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Noto Serif SC','Playfair Display',Georgia,serif;
+  color:#3D2C2C;
+  background:#FAF7F2;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ===== Navigation ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1.2rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:all .4s ease;
+  background:transparent;
+}
+nav.scrolled{
+  background:rgba(250,247,242,.95);
+  backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(61,44,44,.06);
+  padding:.6rem 2rem;
+}
+nav.scrolled .nav-brand{font-size:1.2rem}
+.nav-brand{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;font-weight:600;letter-spacing:.08em;
+  color:#3D2C2C;text-decoration:none;
+  transition:font-size .4s ease;
+}
+.nav-brand span{font-weight:400;font-size:0.85rem;letter-spacing:.15em;color:#B8936E;margin-left:.5rem}
+.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
+.nav-links a{
+  text-decoration:none;color:#5C4A4A;font-size:.85rem;
+  letter-spacing:.06em;transition:color .3s;
+}
+.nav-links a:hover{color:#B8936E}
+.nav-cta{
+  border:1px solid #C4A3A0;color:#C4A3A0!important;
+  padding:.5rem 1.4rem;border-radius:0;transition:all .3s!important;
+  font-size:.8rem!important;
+}
+.nav-cta:hover{background:#C4A3A0;color:#fff!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+.hamburger span{width:24px;height:1.5px;background:#3D2C2C;transition:all .3s}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+@media(max-width:768px){
+  .nav-links{position:fixed;top:0;right:-100%;width:75%;height:100vh;
+    background:#FAF7F2;flex-direction:column;justify-content:center;
+    align-items:center;gap:2rem;transition:right .4s ease;}
+  .nav-links.active{right:0}
+  .hamburger{display:flex}
+}
+
+/* ===== Hero ===== */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:6rem 2rem 4rem;
+  background:linear-gradient(180deg,#F5EDED 0%,#FAF7F2 40%);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:15%;left:10%;width:180px;height:180px;
+  background:radial-gradient(circle,rgba(196,163,160,.15) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero::after{
+  content:'';position:absolute;bottom:20%;right:8%;width:240px;height:240px;
+  background:radial-gradient(circle,rgba(184,147,110,.1) 0%,transparent 70%);
+  border-radius:50%;
+}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.hero-sub{font-size:.85rem;letter-spacing:.2em;color:#B8936E;margin-bottom:1.5rem;text-transform:uppercase}
+.hero h1{
+  font-family:'Playfair Display','Noto Serif SC',serif;
+  font-size:clamp(2.2rem,5vw,3.6rem);font-weight:500;line-height:1.35;
+  letter-spacing:.04em;margin-bottom:1.2rem;color:#3D2C2C;
+}
+.hero h1 em{font-style:italic;color:#C4A3A0}
+.hero-desc{
+  font-size:1rem;color:#7A6A6A;line-height:1.9;max-width:480px;
+  margin:0 auto 2.5rem;font-weight:300;
+}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary,.btn-secondary{
+  padding:.9rem 2.4rem;font-size:.85rem;letter-spacing:.08em;
+  cursor:pointer;transition:all .35s;text-decoration:none;display:inline-block;
+  font-family:'Noto Serif SC',serif;
+}
+.btn-primary{background:#C4A3A0;color:#fff;border:none}
+.btn-primary:hover{background:#B08E8B;transform:translateY(-1px);box-shadow:0 8px 24px rgba(196,163,160,.25)}
+.btn-secondary{background:transparent;color:#5C4A4A;border:1px solid #C4A3A0}
+.btn-secondary:hover{background:rgba(196,163,160,.08);transform:translateY(-1px)}
+
+/* ===== Sections ===== */
+section{padding:6rem 2rem}
+.section-tag{font-size:.78rem;letter-spacing:.2em;color:#B8936E;text-transform:uppercase;text-align:center;margin-bottom:1rem}
+.section-title{
+  font-family:'Playfair Display','Noto Serif SC',serif;
+  font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;
+  text-align:center;letter-spacing:.04em;margin-bottom:1rem;color:#3D2C2C;
+}
+.section-sub{text-align:center;color:#7A6A6A;font-weight:300;max-width:500px;margin:0 auto 4rem;font-size:.95rem}
+.section-divider{width:40px;height:1px;background:#C4A3A0;margin:1.5rem auto}
+
+/* ===== Brand Pillars ===== */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;max-width:1100px;margin:0 auto}
+@media(max-width:768px){.pillars{grid-template-columns:1fr;gap:2.5rem}}
+.pillar{text-align:center;padding:2rem 1.5rem}
+.pillar-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:#E8D5D2;font-style:italic;margin-bottom:.5rem}
+.pillar h3{font-size:1.05rem;font-weight:500;margin-bottom:.8rem;letter-spacing:.04em;color:#3D2C2C}
+.pillar p{font-size:.88rem;color:#7A6A6A;line-height:1.9;font-weight:300}
+
+/* ===== Products ===== */
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;max-width:1100px;margin:0 auto}
+@media(max-width:768px){.products-grid{grid-template-columns:1fr;max-width:420px}}
+.product-card{background:#fff;overflow:hidden;transition:all .5s cubic-bezier(.25,.1,.25,1);cursor:pointer;position:relative}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(61,44,44,.1)}
+.product-img{
+  width:100%;height:380px;object-fit:cover;
+  background:linear-gradient(135deg,#F5EDED 0%,#F0E8E6 50%,#F5EDED 100%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.product-img-inner{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;color:#D4C5C3;font-style:italic;
+  transition:transform .5s cubic-bezier(.25,.1,.25,1);
+}
+.product-card:hover .product-img-inner{transform:scale(1.06)}
+.product-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 50%,rgba(61,44,44,.55) 100%);
+  opacity:0;transition:opacity .45s ease;
+  display:flex;align-items:flex-end;padding:1.5rem;
+}
+.product-card:hover .product-img-overlay{opacity:1}
+.product-img-overlay p{color:#fff;font-size:.8rem;line-height:1.6;font-weight:300;transform:translateY(12px);transition:transform .45s ease}
+.product-card:hover .product-img-overlay p{transform:translateY(0)}
+.product-tag{
+  position:absolute;top:1rem;left:1rem;z-index:2;
+  background:#C4A3A0;color:#fff;font-size:.7rem;padding:.3rem .8rem;
+  letter-spacing:.1em;transition:all .35s ease;
+}
+.product-card:hover .product-tag{background:#B08E8B}
+.product-info{padding:1.8rem}
+.product-name{font-size:1.05rem;font-weight:500;letter-spacing:.04em;margin-bottom:.3rem}
+.product-tagline{font-size:.82rem;color:#B8936E;font-style:italic;margin-bottom:.8rem}
+.product-desc{font-size:.82rem;color:#7A6A6A;line-height:1.8;font-weight:300;margin-bottom:1rem}
+.product-price{font-size:1.1rem;color:#3D2C2C;font-weight:500}
+.product-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.product-features span{
+  font-size:.72rem;color:#B8936E;background:#FBF8F6;
+  padding:.25rem .7rem;letter-spacing:.03em;
+}
+
+/* ===== Story Teaser ===== */
+.story-teaser{
+  background:#fff;margin:0 2rem;max-width:1100px;
+  margin-left:auto;margin-right:auto;padding:5rem 3rem;
+  text-align:center;
+}
+@media(max-width:768px){.story-teaser{margin:0 1rem;padding:3rem 1.5rem}}
+.story-teaser blockquote{
+  font-family:'Playfair Display','Noto Serif SC',serif;
+  font-size:clamp(1.1rem,2vw,1.35rem);font-style:italic;
+  color:#5C4A4A;line-height:2;max-width:600px;margin:0 auto 1.5rem;
+  font-weight:400;
+}
+.story-teaser .author{font-size:.82rem;color:#B8936E;letter-spacing:.06em}
+
+/* ===== Testimonials ===== */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:0 auto}
+@media(max-width:768px){.testimonials-grid{grid-template-columns:1fr;max-width:420px}}
+.testimonial-card{background:#fff;padding:2.5rem 2rem;text-align:center}
+.testimonial-stars{color:#C4A3A0;font-size:.9rem;letter-spacing:.15em;margin-bottom:1rem}
+.testimonial-quote{font-size:.9rem;color:#5C4A4A;line-height:1.9;font-weight:300;margin-bottom:1.5rem;font-style:italic}
+.testimonial-quote::before{content:'"';font-family:'Playfair Display',serif;font-size:2rem;color:#E8D5D2;display:block;margin-bottom:.5rem}
+.testimonial-author{font-size:.78rem;color:#B8936E;letter-spacing:.04em}
+
+/* ===== Philosophy ===== */
+.philosophy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;max-width:1100px;margin:0 auto}
+@media(max-width:768px){.philosophy-grid{grid-template-columns:1fr;gap:2rem}}
+.philosophy-card{background:#fff;padding:3rem 2.5rem}
+.philosophy-card h3{font-family:'Playfair Display','Noto Serif SC',serif;font-size:1.2rem;font-weight:500;margin-bottom:1rem;letter-spacing:.04em}
+.philosophy-card p{font-size:.88rem;color:#7A6A6A;line-height:1.9;font-weight:300}
+.philosophy-icon{font-size:2rem;margin-bottom:1rem}
+
+/* ===== Atelier ===== */
+.atelier{
+  background:linear-gradient(180deg,#FAF7F2 0%,#F5EDED 100%);
+  text-align:center;padding:6rem 2rem;
+}
+.atelier-content{max-width:600px;margin:0 auto}
+.atelier h2{font-family:'Playfair Display','Noto Serif SC',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;margin-bottom:1rem}
+.atelier p{font-size:.95rem;color:#7A6A6A;line-height:2;font-weight:300;margin-bottom:2rem}
+.atelier-stats{display:flex;justify-content:center;gap:4rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.atelier-stat{text-align:center}
+.atelier-stat .num{font-family:'Playfair Display',serif;font-size:2.5rem;color:#C4A3A0;font-style:italic}
+.atelier-stat .label{font-size:.78rem;color:#B8936E;letter-spacing:.08em;margin-top:.3rem}
+
+/* ===== Contact ===== */
+.contact{
+  padding:6rem 2rem;
+  max-width:800px;margin:0 auto;text-align:center;
+}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+  margin-top:3rem;text-align:left;
+}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-info-item{
+  display:flex;align-items:flex-start;gap:1rem;margin-bottom:2rem;
+}
+.contact-icon{
+  width:48px;height:48px;background:rgba(196,163,160,.12);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;flex-shrink:0;
+}
+.contact-info-item h4{font-size:.88rem;font-weight:500;color:#3D2C2C;margin-bottom:.25rem}
+.contact-info-item p{font-size:.82rem;color:#7A6A6A;font-weight:300;line-height:1.6}
+.contact-form-group{margin-bottom:1.2rem}
+.contact-form-group label{
+  display:block;font-size:.78rem;color:#5C4A4A;margin-bottom:.4rem;letter-spacing:.04em;
+}
+.contact-form-group input,.contact-form-group textarea{
+  width:100%;padding:.75rem 1rem;border:1px solid #E0D5D5;
+  font-family:'Noto Serif SC',serif;font-size:.85rem;color:#3D2C2C;
+  background:#FAF7F2;transition:border-color .3s;outline:none;
+}
+.contact-form-group input:focus,.contact-form-group textarea:focus{border-color:#C4A3A0}
+.qr-code{
+  width:108px;height:120px;margin-top:.5rem;border-radius:8px;
+  border:2px solid #E0D5D5;
+  filter:sepia(.3) saturate(.85) brightness(1.05) hue-rotate(-10deg);
+  transition:filter .3s;
+}
+.qr-code:hover{filter:sepia(.3) saturate(1) brightness(1.1) hue-rotate(-10deg)}
+.contact-form-group textarea{height:120px;resize:vertical}
+.contact-form .btn-primary{width:100%}
+.form-success{display:none;text-align:center;padding:2rem}
+.form-success p{color:#7A6A6A;font-size:.9rem;line-height:2}
+
+/* ===== Footer ===== */
+footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto 4rem}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.08em;color:#F0E8E6;margin-bottom:1rem}
+.footer p{font-size:.8rem;line-height:2;font-weight:300;color:#A89A9A}
+.footer h4{font-size:.8rem;letter-spacing:.12em;color:#D4C5C3;margin-bottom:1.2rem;text-transform:uppercase;font-weight:400}
+.footer a{color:#D4B896;text-decoration:none;font-size:.8rem;display:block;margin-bottom:.6rem;transition:color .3s}
+.footer a:hover{color:#F0E8E6}
+.footer-bottom{max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(196,184,184,.15);text-align:center;font-size:.75rem;color:#8A7A7A}
+
+/* ===== Animations ===== */
+.fade-in{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ===== Mobile-responsive ===== */
+@media(max-width:768px){
+  section{padding:3.5rem 1rem}
+  .section-tag{font-size:.7rem;letter-spacing:.16em}
+  .section-title{font-size:1.35rem}
+  .section-sub{font-size:.85rem;margin-bottom:2.5rem;padding:0 .5rem}
+
+  /* Hero */
+  .hero{padding:5rem 1rem 3rem;min-height:85vh}
+  .hero h1{font-size:1.8rem}
+  .hero-desc{font-size:.88rem;padding:0 .5rem}
+  .hero-sub{font-size:.72rem;letter-spacing:.14em}
+  .btn-primary,.btn-secondary{padding:.75rem 1.8rem;font-size:.78rem;width:100%;text-align:center}
+
+  /* Nav */
+  nav{padding:.9rem 1rem}
+  nav.scrolled{padding:.6rem 1rem}
+  .nav-brand{font-size:1.2rem}
+  nav.scrolled .nav-brand{font-size:1.05rem}
+  .nav-links{position:fixed;top:0;right:-100%;width:80%;height:100vh;
+    background:#FAF7F2;flex-direction:column;justify-content:center;
+    align-items:center;gap:2.2rem;transition:right .4s ease;}
+  .nav-links a{font-size:.95rem}
+  .nav-links.active{right:0}
+  .hamburger{display:flex}
+
+  /* Quick Entry */
+  .quick-entry{margin-top:-2rem;padding:0 1rem}
+  .quick-grid{grid-template-columns:1fr;max-width:300px;gap:.8rem}
+  .quick-card{padding:1.5rem 1.2rem}
+  .quick-icon{font-size:1.8rem;margin-bottom:.4rem}
+  .quick-card h3{font-size:.88rem}
+
+  /* Pillars */
+  .pillars{grid-template-columns:1fr;gap:2rem}
+  .pillar{padding:1rem .5rem}
+  .pillar-num{font-size:2rem}
+  .pillar p{font-size:.82rem}
+
+  /* Products */
+  .products-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}
+  .product-img{height:280px}
+  .product-img-inner{font-size:2.2rem}
+  .product-info{padding:1.3rem}
+  .product-name{font-size:.95rem}
+  .product-desc{font-size:.78rem}
+  .product-price{font-size:1rem}
+
+  /* Story Teaser */
+  .story-teaser{margin:0 .5rem;padding:3rem 1.2rem}
+  .story-teaser blockquote{font-size:1rem;line-height:1.9}
+
+  /* Testimonials */
+  .testimonials-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}
+  .testimonial-card{padding:2rem 1.5rem}
+  .testimonial-quote{font-size:.82rem}
+
+  /* Philosophy */
+  .philosophy-grid{grid-template-columns:1fr;gap:1.5rem}
+  .philosophy-card{padding:2rem 1.5rem}
+  .philosophy-card h3{font-size:1.05rem}
+  .philosophy-card p{font-size:.82rem}
+
+  /* Atelier */
+  .atelier{padding:4rem 1rem}
+  .atelier h2{font-size:1.5rem}
+  .atelier p{font-size:.85rem;padding:0 .5rem}
+  .atelier-stats{gap:2rem}
+  .atelier-stat .num{font-size:1.8rem}
+  .atelier-stat .label{font-size:.7rem}
+
+  /* Footer */
+  footer{padding:3rem 1.2rem 1.5rem}
+  .footer-grid{grid-template-columns:1fr;gap:2rem}
+  .footer-brand{font-size:1.2rem}
+
+  /* Fade-in — faster on mobile */
+  .fade-in{transition:all .5s ease}
+}
+
+/* Extra small phones */
+@media(max-width:400px){
+  .hero h1{font-size:1.55rem}
+  .hero-desc{font-size:.82rem}
+  .product-img{height:240px}
+  .atelier-stats{gap:1.2rem}
+  .atelier-stat .num{font-size:1.5rem}
+  .story-teaser{padding:2rem 1rem}
+  .story-teaser blockquote{font-size:.9rem}
+}
+
+/* ===== Quick Entry (金刚位) ===== */
+.quick-entry{padding:0 2rem;margin-top:-3rem;position:relative;z-index:10}
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
+@media(max-width:768px){.quick-grid{grid-template-columns:1fr;max-width:320px;gap:1rem}}
+.quick-card{
+  background:#fff;padding:2rem 1.5rem;text-align:center;text-decoration:none;
+  transition:all .4s ease;display:block;
+  box-shadow:0 4px 20px rgba(61,44,44,.06);
+}
+.quick-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(61,44,44,.1)}
+.quick-icon{font-size:2.2rem;margin-bottom:.8rem;display:block}
+.quick-card h3{font-size:.95rem;color:#3D2C2C;font-weight:500;letter-spacing:.04em;margin-bottom:.3rem}
+.quick-card p{font-size:.75rem;color:#B8936E;font-weight:300;letter-spacing:.04em}
+
+/* ===== Custom scrollbar ===== */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#FAF7F2}
+::-webkit-scrollbar-thumb{background:#D4C5C3;border-radius:3px}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="nav">
+  <a href="#" class="nav-brand">Dreamystpet</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">初见</a></li>
+    <li><a href="#products">裙衣橱</a></li>
+    <li><a href="#story">她的故事</a></li>
+    <li><a href="#philosophy">我们的标准</a></li>
+    <li><a href="#contact">联系我们</a></li>
+    <li><a href="#atelier" class="nav-cta">定制</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-content fade-in">
+    <p class="hero-sub">马尔济斯 · 西施 · 约克夏</p>
+    <h1>为它，造一场<em>裙摆上的梦</em></h1>
+    <p class="hero-desc">Dreamystpet，专注小型犬设计感裙装的法式浪漫品牌。每一条裙子，都是一件可以穿的作品。</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">探索裙衣橱</a>
+      <a href="#story" class="btn-secondary">聆听她的故事</a>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Entry (金刚位) -->
+<section class="quick-entry">
+  <div class="quick-grid">
+    <a href="#products" class="quick-card fade-in">
+      <span class="quick-icon">🌿</span>
+      <h3>日常浪漫</h3>
+      <p>碎花 · 雪纺 · 蓬蓬裙摆</p>
+    </a>
+    <a href="#products" class="quick-card fade-in">
+      <span class="quick-icon">🪡</span>
+      <h3>手工蕾丝</h3>
+      <p>法国蕾丝 · 手工对花 · 手作</p>
+    </a>
+    <a href="#atelier" class="quick-card fade-in">
+      <span class="quick-icon">✨</span>
+      <h3>重工定制</h3>
+      <p>珠片 · 刺绣 · 专属</p>
+    </a>
+  </div>
+</section>
+
+<!-- Brand Pillars -->
+<section>
+  <p class="section-tag">Ce que nous croyons</p>
+  <h2 class="section-title">我们相信，小型犬的裙子不该只是「有就行」</h2>
+  <div class="section-divider"></div>
+  <div class="pillars">
+    <div class="pillar fade-in">
+      <div class="pillar-num">01</div>
+      <h3>只为三犬种打版</h3>
+      <p>马尔济斯的胸廓、西施的腰线、约克夏的纤长——它们不是缩小版的大狗。每一条裙子的版型按犬种独立调整，裙摆长度精确到厘米，前胸活动余量反复测试。</p>
+    </div>
+    <div class="pillar fade-in">
+      <div class="pillar-num">02</div>
+      <h3>每一件都是手作</h3>
+      <p>蕾丝由版师逐片手工对花，珠片一颗一颗缝上去。一条重工裙从裁剪到完成平均耗时 12 小时。不多，但每一件都经得起细看。</p>
+    </div>
+    <div class="pillar fade-in">
+      <div class="pillar-num">03</div>
+      <h3>好看，但不打扰它</h3>
+      <p>所有裙装内里都是婴儿棉内衬，腰部用弹性包边而非勒带。它蹲下、转身、跳上沙发时，裙子只是温柔地跟着——不碍事。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" style="background:#fff;">
+  <p class="section-tag">La Collection</p>
+  <h2 class="section-title">三条裙子，三种浪漫</h2>
+  <p class="section-sub">每一条都为一个温柔的念头而设计——散步的早晨、被记住的日子、值得纪念的瞬间。</p>
+
+  <div class="products-grid">
+    <!-- Product 1 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-inner">lace</div>
+        <div class="product-img-overlay"><p>法国蕾丝 · 三层雪纺裙摆 · 全棉内衬</p></div>
+        <span class="product-tag">日常浪漫</span>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">蕾丝晨光连衣裙</h3>
+        <p class="product-tagline">像早晨的光，落在蕾丝花瓣上</p>
+        <p class="product-desc">法国进口蕾丝手工对花拼接。三层雪纺裙摆叠出蓬松感但不臃肿，前胸手工蝴蝶结。全棉内衬——穿上它像穿了一朵云。</p>
+        <p class="product-price">¥398</p>
+        <div class="product-features">
+          <span>法国蕾丝</span><span>三层雪纺</span><span>棉质内衬</span><span>四色可选</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-inner">garden</div>
+        <div class="product-img-overlay"><p>手绘水彩印花 · 三层欧根纱 · 可机洗</p></div>
+        <span class="product-tag">手工蕾丝</span>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">花园蓬蓬裙</h3>
+        <p class="product-tagline">穿上它，像刚从花园里跑出来</p>
+        <p class="product-desc">手绘水彩碎花印花，三层欧根纱蓬蓬裙摆。弹力腰封刚好——不勒不滑。可以机洗，耐得住一只快乐小狗的日常折腾。</p>
+        <p class="product-price">¥580</p>
+        <div class="product-features">
+          <span>手绘印花</span><span>欧根纱裙摆</span><span>弹力腰封</span><span>可机洗</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card fade-in">
+      <div class="product-img">
+        <div class="product-img-inner">étoile</div>
+        <div class="product-img-overlay"><p>600+手工珠片 · 真丝内衬 · 每月限量8条</p></div>
+        <span class="product-tag">重工定制</span>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">珠片星夜吊带裙</h3>
+        <p class="product-tagline">把一小片星空穿在身上</p>
+        <p class="product-desc">600+颗哑光日本珠片手工缝制，从密到疏排成银河渐变。真丝内衬，每条耗时 15 小时。每月限量 8 条，内衬绣有专属编号。</p>
+        <p class="product-price">¥1,280</p>
+        <div class="product-features">
+          <span>600+珠片</span><span>真丝内衬</span><span>每月8条</span><span>可绣名字</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story Teaser -->
+<section class="story-teaser fade-in" id="story">
+  <p class="section-tag">Notre Histoire</p>
+  <blockquote>
+    四年前，设计师小D领养了一只马尔济斯，取名「梦」。她想给梦买一条好看的裙子——翻了几十页，没有一条是「真正为小型犬做的」好看的。那天晚上她把梦抱上工作台，翻出一块珍藏了很久的法国蕾丝。第一条Dreamystpet裙子，就这样在一张堆满珠片和线头的工作台上诞生了。
+  </blockquote>
+  <p class="author">—— Dreamystpet 创始人</p>
+  <div style="margin-top:2rem">
+    <a href="#" class="btn-secondary">阅读完整故事</a>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section>
+  <p class="section-tag">Elles ont essayé</p>
+  <h2 class="section-title">来自已经穿上它们的小公主</h2>
+  <div class="section-divider"></div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-in">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">第一次买到不勒腋下的宠物裙。我家西施穿上跑了半小时都没歪，裙摆跟着她转起来的样子太美了。</p>
+      <p class="testimonial-author">@棉花糖是西施</p>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">拆开盒子那一刻就感动了。裙子用薄纸包着，系了一根丝带，像拆一件给自己的礼物。我家约克夏穿上珠片裙在小区回头率百分百。</p>
+      <p class="testimonial-author">@Milo的衣帽间</p>
+    </div>
+    <div class="testimonial-card fade-in">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-quote">之前买过很多宠物蕾丝裙，内里直接锁边，扎手。Dreamystpet的内衬是棉的，我终于敢让我家马尔济斯穿一整天。</p>
+      <p class="testimonial-author">@团团今天穿什么</p>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophy -->
+<section id="philosophy" style="background:#fff;">
+  <p class="section-tag">Notre Savoir-Faire</p>
+  <h2 class="section-title">Dreamystpet 的标准</h2>
+  <p class="section-sub">每一条裙子的背后，是对面料、版型和工艺的不妥协。</p>
+
+  <div class="philosophy-grid">
+    <div class="philosophy-card fade-in">
+      <div class="philosophy-icon">✂️</div>
+      <h3>只为小型犬</h3>
+      <p>同一条花园蓬蓬裙，给马尔济斯和给约克夏的版——前胸弧度不同、裙摆长度不同、腰封位置不同。你看不出来，但它们穿上后知道。</p>
+    </div>
+    <div class="philosophy-card fade-in">
+      <div class="philosophy-icon">🧵</div>
+      <h3>面料先过人的皮肤</h3>
+      <p>法国 Solstiss 蕾丝、桑蚕丝内衬、全棉 A 类婴幼儿标准面料。每批面料到厂，第一道检测不是送实验室——是用手背摸。扎手的，一票否决。</p>
+    </div>
+    <div class="philosophy-card fade-in">
+      <div class="philosophy-icon">🪡</div>
+      <h3>慢，就是快</h3>
+      <p>蕾丝手工对花、珠片逐颗手缝、三道质检。所有版师均有高级成衣手作背景——她们习惯了对人衣服的标准，带到宠物裙上，就是降维。</p>
+    </div>
+    <div class="philosophy-card fade-in">
+      <div class="philosophy-icon">🐾</div>
+      <h3>通过「奔跑测试」才能上架</h3>
+      <p>每款新品至少两只不同犬种试穿——穿着奔跑、打滚、蜷缩——通过了才上架。好看是底线，好穿是信仰。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Atelier -->
+<section class="atelier" id="atelier">
+  <div class="atelier-content fade-in">
+    <p class="section-tag">L'Atelier</p>
+    <h2>重工定制</h2>
+    <p>在这个什么都讲究「快」的时代，我们选择慢。珠片只能一颗一颗缝，刺绣只能一针一针走。一条重工裙从下单到交付需要 2–3 周——这段时间里，它只属于你的小狗。</p>
+    <div class="atelier-stats">
+      <div class="atelier-stat"><div class="num">15h</div><div class="label">纯手作时间</div></div>
+      <div class="atelier-stat"><div class="num">8</div><div class="label">每月限量条数</div></div>
+      <div class="atelier-stat"><div class="num">600+</div><div class="label">珠片逐颗手缝</div></div>
+    </div>
+    <a href="#contact" class="btn-primary">开始定制故事</a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact fade-in" id="contact">
+  <p class="section-tag">Nous Contacter</p>
+  <h2 class="section-title">联系我们</h2>
+  <p class="section-sub">关于尺码、定制、合作——任何问题，直接联系我们</p>
+
+  <div class="contact-grid">
+    <!-- Info -->
+    <div>
+      <div class="contact-info-item">
+        <div class="contact-icon">💬</div>
+        <div>
+          <h4>微信</h4>
+          <p>D5410025117</p>
+          <img src="wechat-qr.jpg" alt="微信扫码添加 Dreamystpet" class="qr-code">
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">📕</div>
+        <div>
+          <h4>小红书</h4>
+          <p>@DreamystPet</p>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">📧</div>
+        <div>
+          <h4>邮箱</h4>
+          <p>Dreamystpet@outlook.com<br>dreamystpet@163.com</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div>
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/mykayddy" method="POST">
+        <div class="contact-form-group">
+          <label for="name">您的称呼</label>
+          <input type="text" id="name" name="name" placeholder="怎么称呼您？" required>
+        </div>
+        <div class="contact-form-group">
+          <label for="contact">微信 / 邮箱</label>
+          <input type="text" id="contact" name="contact" placeholder="方便我们联系到您" required>
+        </div>
+        <div class="contact-form-group">
+          <label for="message">想说的话</label>
+          <textarea id="message" name="message" placeholder="例如：我想给马尔济斯定制一条珠片裙..." required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Dreamystpet 网站咨询">
+        <button type="submit" class="btn-primary">发送消息</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <p>✨ 消息已发送！<br>我们会在 24 小时内回复您。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Dreamystpet</div>
+      <p>专注马尔济斯、西施、约克夏的设计感裙装。<br>每一条裙子，都是一件可以穿的作品。</p>
+    </div>
+    <div>
+      <h4>探索</h4>
+      <a href="#products">裙衣橱</a>
+      <a href="#story">她的故事</a>
+      <a href="#philosophy">我们的标准</a>
+      <a href="#atelier">重工定制</a>
+    </div>
+    <div>
+      <h4>帮助</h4>
+      <a href="#">尺码指南</a>
+      <a href="#">护理说明</a>
+      <a href="#">定制流程</a>
+      <a href="#">找到我们</a>
+    </div>
+    <div>
+      <h4>关注</h4>
+      <a href="#">小红书 @Dreamystpet</a>
+      <a href="#">Instagram @dreamystpet</a>
+      <a href="#">Dreamystpet@outlook.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Dreamystpet. Tous droits réservés.
+  </div>
+</footer>
+
+<script>
+// Scroll nav
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>50);
+});
+
+// Mobile menu
+const hamburger=document.getElementById('hamburger');
+const navLinks=document.getElementById('navLinks');
+hamburger.addEventListener('click',()=>{
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  hamburger.classList.remove('active');
+  navLinks.classList.remove('active');
+}));
+
+// Fade-in animation
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.15});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+// Contact form
+const contactForm=document.getElementById('contactForm');
+if(contactForm){
+  contactForm.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    const btn=contactForm.querySelector('button');
+    btn.textContent='发送中...';btn.disabled=true;
+    try{
+      const res=await fetch(contactForm.action,{
+        method:'POST',body:new FormData(contactForm),
+        headers:{'Accept':'application/json'}
+      });
+      if(res.ok){
+        contactForm.style.display='none';
+        document.getElementById('formSuccess').style.display='block';
+      }else{throw new Error('form error')}
+    }catch(err){
+      alert('发送失败，请直接通过微信或邮箱联系我们');
+    }
+    btn.textContent='发送消息';btn.disabled=false;
+  });
+}
+</script>
+</body>
+</html>
