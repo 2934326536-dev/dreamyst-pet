@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Dreamystpet — 专注马尔济斯、西施、约克夏的设计感裙装。法式浪漫少女风，手工蕾丝裙、重工珠片定制。">
 <title>Dreamystpet | 小型犬设计感裙装</title>
-<!-- Google Fonts blocked in China - using system serif fonts for instant load -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* System font stack: Georgia for English, STSong/宋体 for Chinese */
+/* ===== Reset & Base ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{
-  font-family:'STSong','Songti SC','宋体','Georgia','Times New Roman',Georgia,serif;
+  font-family:'Noto Serif SC','Playfair Display',Georgia,serif;
   color:#3D2C2C;
   background:#FAF7F2;
   line-height:1.8;
@@ -35,7 +37,7 @@ nav.scrolled{
 }
 nav.scrolled .nav-brand{font-size:1.2rem}
 .nav-brand{
-  font-family:'Georgia','Times New Roman',serif;
+  font-family:'Playfair Display',serif;
   font-size:1.5rem;font-weight:600;letter-spacing:.08em;
   color:#3D2C2C;text-decoration:none;
   transition:font-size .4s ease;
@@ -86,7 +88,7 @@ nav.scrolled .nav-brand{font-size:1.2rem}
 .hero-content{position:relative;z-index:1;max-width:700px}
 .hero-sub{font-size:.85rem;letter-spacing:.2em;color:#B8936E;margin-bottom:1.5rem;text-transform:uppercase}
 .hero h1{
-  font-family:'Georgia','STSong','Songti SC','宋体',serif;
+  font-family:'Playfair Display','Noto Serif SC',serif;
   font-size:clamp(2.2rem,5vw,3.6rem);font-weight:500;line-height:1.35;
   letter-spacing:.04em;margin-bottom:1.2rem;color:#3D2C2C;
 }
@@ -99,7 +101,7 @@ nav.scrolled .nav-brand{font-size:1.2rem}
 .btn-primary,.btn-secondary{
   padding:.9rem 2.4rem;font-size:.85rem;letter-spacing:.08em;
   cursor:pointer;transition:all .35s;text-decoration:none;display:inline-block;
-  font-family:'STSong','Songti SC','宋体',serif;
+  font-family:'Noto Serif SC',serif;
 }
 .btn-primary{background:#C4A3A0;color:#fff;border:none}
 .btn-primary:hover{background:#B08E8B;transform:translateY(-1px);box-shadow:0 8px 24px rgba(196,163,160,.25)}
@@ -110,12 +112,16 @@ nav.scrolled .nav-brand{font-size:1.2rem}
 section{padding:6rem 2rem}
 .section-tag{font-size:.78rem;letter-spacing:.2em;color:#B8936E;text-transform:uppercase;text-align:center;margin-bottom:1rem}
 .section-title{
-  font-family:'Georgia','STSong','Songti SC','宋体',serif;
+  font-family:'Playfair Display','Noto Serif SC',serif;
   font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;
   text-align:center;letter-spacing:.04em;margin-bottom:1rem;color:#3D2C2C;
 }
 .section-sub{text-align:center;color:#7A6A6A;font-weight:300;max-width:500px;margin:0 auto 4rem;font-size:.95rem}
 .section-divider{width:40px;height:1px;background:#C4A3A0;margin:1.5rem auto}
+
+/* ===== Trust Bar ===== */
+.trust-bar{background:#FAF7F2;text-align:center;padding:1rem 2rem;border-bottom:1px solid #F0E8E6}
+.trust-bar p{font-size:.75rem;color:#B8936E;letter-spacing:.06em;font-weight:300}
 
 /* ===== Products ===== */
 .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;max-width:1100px;margin:0 auto}
@@ -129,7 +135,7 @@ section{padding:6rem 2rem}
   position:relative;overflow:hidden;
 }
 .product-img-inner{
-  font-family:'Georgia','Times New Roman',serif;
+  font-family:'Playfair Display',serif;
   font-size:3rem;color:#D4C5C3;font-style:italic;
   transition:transform .5s cubic-bezier(.25,.1,.25,1);
 }
@@ -154,6 +160,7 @@ section{padding:6rem 2rem}
 .product-tagline{font-size:.82rem;color:#B8936E;font-style:italic;margin-bottom:.8rem}
 .product-desc{font-size:.82rem;color:#7A6A6A;line-height:1.8;font-weight:300;margin-bottom:1rem}
 .product-price{font-size:1.1rem;color:#3D2C2C;font-weight:500}
+.product-buy{font-size:.72rem;color:#B8936E;margin-top:.7rem;padding-top:.7rem;border-top:1px solid #F0E8E6;letter-spacing:.04em;font-weight:300}
 .product-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
 .product-features span{
   font-size:.72rem;color:#B8936E;background:#FBF8F6;
@@ -168,7 +175,7 @@ section{padding:6rem 2rem}
 }
 @media(max-width:768px){.story-teaser{margin:0 1rem;padding:3rem 1.5rem}}
 .story-teaser blockquote{
-  font-family:'Georgia','STSong','Songti SC','宋体',serif;
+  font-family:'Playfair Display','Noto Serif SC',serif;
   font-size:clamp(1.1rem,2vw,1.35rem);font-style:italic;
   color:#5C4A4A;line-height:2;max-width:600px;margin:0 auto 1.5rem;
   font-weight:400;
@@ -194,14 +201,14 @@ section{padding:6rem 2rem}
 .testimonial-card{background:#fff;padding:2.5rem 2rem;text-align:center}
 .testimonial-stars{color:#C4A3A0;font-size:.9rem;letter-spacing:.15em;margin-bottom:1rem}
 .testimonial-quote{font-size:.9rem;color:#5C4A4A;line-height:1.9;font-weight:300;margin-bottom:1.5rem;font-style:italic}
-.testimonial-quote::before{content:'"';font-family:'Georgia','Times New Roman',serif;font-size:2rem;color:#E8D5D2;display:block;margin-bottom:.5rem}
+.testimonial-quote::before{content:'"';font-family:'Playfair Display',serif;font-size:2rem;color:#E8D5D2;display:block;margin-bottom:.5rem}
 .testimonial-author{font-size:.78rem;color:#B8936E;letter-spacing:.04em}
 
 /* ===== Philosophy ===== */
 .philosophy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;max-width:1100px;margin:0 auto}
 @media(max-width:768px){.philosophy-grid{grid-template-columns:1fr;gap:2rem}}
 .philosophy-card{background:#fff;padding:3rem 2.5rem}
-.philosophy-card h3{font-family:'Georgia','STSong','Songti SC','宋体',serif;font-size:1.2rem;font-weight:500;margin-bottom:1rem;letter-spacing:.04em}
+.philosophy-card h3{font-family:'Playfair Display','Noto Serif SC',serif;font-size:1.2rem;font-weight:500;margin-bottom:1rem;letter-spacing:.04em}
 .philosophy-card p{font-size:.88rem;color:#7A6A6A;line-height:1.9;font-weight:300}
 .philosophy-icon{font-size:2rem;margin-bottom:1rem}
 
@@ -211,11 +218,11 @@ section{padding:6rem 2rem}
   text-align:center;padding:6rem 2rem;
 }
 .atelier-content{max-width:600px;margin:0 auto}
-.atelier h2{font-family:'Georgia','STSong','Songti SC','宋体',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;margin-bottom:1rem}
+.atelier h2{font-family:'Playfair Display','Noto Serif SC',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;margin-bottom:1rem}
 .atelier p{font-size:.95rem;color:#7A6A6A;line-height:2;font-weight:300;margin-bottom:2rem}
 .atelier-stats{display:flex;justify-content:center;gap:4rem;margin-bottom:2.5rem;flex-wrap:wrap}
 .atelier-stat{text-align:center}
-.atelier-stat .num{font-family:'Georgia','Times New Roman',serif;font-size:2.5rem;color:#C4A3A0;font-style:italic}
+.atelier-stat .num{font-family:'Playfair Display',serif;font-size:2.5rem;color:#C4A3A0;font-style:italic}
 .atelier-stat .label{font-size:.78rem;color:#B8936E;letter-spacing:.08em;margin-top:.3rem}
 
 /* ===== Contact ===== */
@@ -244,7 +251,7 @@ section{padding:6rem 2rem}
 }
 .contact-form-group input,.contact-form-group textarea{
   width:100%;padding:.75rem 1rem;border:1px solid #E0D5D5;
-  font-family:'STSong','Songti SC','宋体',serif;font-size:.85rem;color:#3D2C2C;
+  font-family:'Noto Serif SC',serif;font-size:.85rem;color:#3D2C2C;
   background:#FAF7F2;transition:border-color .3s;outline:none;
 }
 .contact-form-group input:focus,.contact-form-group textarea:focus{border-color:#C4A3A0}
@@ -253,7 +260,7 @@ section{padding:6rem 2rem}
 .qr-code{display:none}
 
 /* Chat Widget */
-.chat-widget{position:fixed;bottom:2rem;right:2rem;z-index:998;font-family:'STSong','Songti SC','宋体',serif}
+.chat-widget{position:fixed;bottom:2rem;right:2rem;z-index:998;font-family:'Noto Serif SC',serif}
 .chat-bubble{
   width:56px;height:56px;border-radius:50%;background:#C4A3A0;color:#fff;
   border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;
@@ -277,7 +284,7 @@ section{padding:6rem 2rem}
 .chat-avatar{
   width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.25);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Georgia','Times New Roman',serif;font-size:1.1rem;font-weight:600;
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;
 }
 .chat-title{font-size:.82rem;font-weight:500;letter-spacing:.03em}
 .chat-status{font-size:.65rem;opacity:.8;font-weight:300}
@@ -291,20 +298,20 @@ section{padding:6rem 2rem}
 .chat-quick{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
 .chat-quick button{
   background:#fff;border:1px solid #E8DBD8;color:#C4A3A0;
-  font-size:.7rem;padding:.4rem .8rem;cursor:pointer;font-family:'STSong','Songti SC','宋体',serif;
+  font-size:.7rem;padding:.4rem .8rem;cursor:pointer;font-family:'Noto Serif SC',serif;
   transition:all .25s;letter-spacing:.03em;
 }
 .chat-quick button:hover{background:#C4A3A0;color:#fff;border-color:#C4A3A0}
 .chat-footer{display:flex;padding:.8rem 1rem;border-top:1px solid #F0E8E6;gap:.5rem}
 .chat-footer textarea{
-  flex:1;border:none;outline:none;font-family:'STSong','Songti SC','宋体',serif;
+  flex:1;border:none;outline:none;font-family:'Noto Serif SC',serif;
   font-size:.8rem;resize:none;color:#3D2C2C;background:transparent;
   padding:.3rem 0;line-height:1.5;
 }
 .chat-footer textarea::placeholder{color:#C4B8B8}
 .chat-footer button{
   background:#C4A3A0;color:#fff;border:none;padding:.4rem 1rem;
-  font-size:.75rem;cursor:pointer;font-family:'STSong','Songti SC','宋体',serif;
+  font-size:.75rem;cursor:pointer;font-family:'Noto Serif SC',serif;
   letter-spacing:.04em;transition:background .3s;flex-shrink:0;
 }
 .chat-footer button:hover{background:#B08E8B}
@@ -340,7 +347,7 @@ section{padding:6rem 2rem}
 footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto 4rem}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
-.footer-brand{font-family:'Georgia','Times New Roman',serif;font-size:1.4rem;letter-spacing:.08em;color:#C4B8B8;margin-bottom:1rem}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.08em;color:#C4B8B8;margin-bottom:1rem}
 .footer-brand-col p{font-size:.78rem;line-height:2;font-weight:300;color:#888080}
 .footer-contact{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06)}
 .footer-contact p{font-size:.75rem;color:#888080;line-height:1.8;font-weight:300}
@@ -455,7 +462,7 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
   position:absolute;inset:0;display:flex;flex-direction:column;
   justify-content:flex-end;padding:2.5rem 2rem;
 }
-.cat-card h3{font-family:'Georgia','STSong','Songti SC','宋体',serif;font-size:1.3rem;font-weight:500;color:#fff;letter-spacing:.06em;margin-bottom:.3rem;position:relative;z-index:1}
+.cat-card h3{font-family:'Playfair Display','Noto Serif SC',serif;font-size:1.3rem;font-weight:500;color:#fff;letter-spacing:.06em;margin-bottom:.3rem;position:relative;z-index:1}
 .cat-card p{font-size:.78rem;color:rgba(255,255,255,.8);font-weight:300;letter-spacing:.06em;position:relative;z-index:1}
 .cat-card .cat-line{width:24px;height:1px;background:rgba(255,255,255,.5);margin-bottom:1rem;position:relative;z-index:1;transition:width .4s ease}
 .cat-card:hover .cat-line{width:48px}
@@ -570,6 +577,11 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
   </div>
 </section>
 
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <p>💬 小红书 / 微信下单 · 帮你选尺码 · 售后无忧</p>
+</div>
+
 <!-- Products -->
 <section id="products" style="background:#fff;">
   <p class="section-tag">La Collection</p>
@@ -592,6 +604,7 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
         <div class="product-features">
           <span>法国蕾丝</span><span>三层雪纺</span><span>棉质内衬</span><span>四色可选</span>
         </div>
+        <p class="product-buy">小红书 / 微信下单 · 帮你选尺码</p>
       </div>
     </div>
 
@@ -610,6 +623,7 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
         <div class="product-features">
           <span>手绘印花</span><span>欧根纱裙摆</span><span>弹力腰封</span><span>可机洗</span>
         </div>
+        <p class="product-buy">小红书 / 微信下单 · 帮你选尺码</p>
       </div>
     </div>
 
@@ -628,6 +642,7 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
         <div class="product-features">
           <span>600+珠片</span><span>真丝内衬</span><span>每月8条</span><span>可绣名字</span>
         </div>
+        <p class="product-buy">小红书 / 微信下单 · 帮你选尺码</p>
       </div>
     </div>
   </div>
