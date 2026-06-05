@@ -184,6 +184,11 @@ section{padding:6rem 2rem}
   font-weight:400;
 }
 .story-teaser .author{font-size:.82rem;color:#B8936E;letter-spacing:.06em}
+.story-text{max-width:560px;margin:0 auto;text-align:left}
+.story-text p{font-size:.92rem;color:#5C4A4A;line-height:2.2;font-weight:300;margin-bottom:1.2rem}
+.story-submit{margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid #E8DBD8}
+.story-submit p{font-size:.88rem;color:#7A6A6A;font-weight:300;line-height:2;margin-bottom:.3rem}
+.story-submit span{color:#C4A3A0;font-weight:500}
 
 /* ===== Testimonials ===== */
 .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:0 auto}
@@ -245,28 +250,101 @@ section{padding:6rem 2rem}
   background:#FAF7F2;transition:border-color .3s;outline:none;
 }
 .contact-form-group input:focus,.contact-form-group textarea:focus{border-color:#C4A3A0}
-.qr-code{
-  width:108px;height:120px;margin-top:.5rem;border-radius:8px;
-  border:2px solid #E0D5D5;
-  filter:sepia(.3) saturate(.85) brightness(1.05) hue-rotate(-10deg);
-  transition:filter .3s;
+.qr-trigger{font-size:.78rem;color:#C4A3A0;text-decoration:none;letter-spacing:.04em;border-bottom:1px dashed #D4C5C3;padding-bottom:2px;transition:all .3s}
+.qr-trigger:hover{color:#B08E8B;border-color:#B08E8B}
+.qr-code{display:none}
+
+/* Chat Widget */
+.chat-widget{position:fixed;bottom:2rem;right:2rem;z-index:998;font-family:'Noto Serif SC',serif}
+.chat-bubble{
+  width:56px;height:56px;border-radius:50%;background:#C4A3A0;color:#fff;
+  border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;box-shadow:0 8px 28px rgba(196,163,160,.35);
+  transition:all .35s ease;position:relative;z-index:1;
 }
-.qr-code:hover{filter:sepia(.3) saturate(1) brightness(1.1) hue-rotate(-10deg)}
+.chat-bubble:hover{background:#B08E8B;transform:scale(1.08);box-shadow:0 12px 36px rgba(196,163,160,.45)}
+.chat-bubble-icon{font-size:1.2rem;line-height:1}
+.chat-bubble-text{font-size:.55rem;letter-spacing:.06em;margin-top:1px}
+.chat-panel{
+  display:none;position:absolute;bottom:72px;right:0;width:340px;
+  background:#fff;border-radius:2px;overflow:hidden;
+  box-shadow:0 16px 56px rgba(0,0,0,.15);flex-direction:column;
+}
+.chat-panel.active{display:flex}
+.chat-header{
+  background:#C4A3A0;color:#fff;padding:1rem 1.2rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.chat-header-info{display:flex;align-items:center;gap:.8rem}
+.chat-avatar{
+  width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;
+}
+.chat-title{font-size:.82rem;font-weight:500;letter-spacing:.03em}
+.chat-status{font-size:.65rem;opacity:.8;font-weight:300}
+.chat-close{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;opacity:.7;line-height:1}
+.chat-close:hover{opacity:1}
+.chat-body{padding:1.2rem;max-height:280px;overflow-y:auto;flex:1}
+.chat-msg{padding:.7rem 1rem;margin-bottom:.6rem}
+.chat-msg.bot{background:#F8F4F2;font-size:.8rem;color:#5C4A4A;line-height:1.8;font-weight:300}
+.chat-msg.bot p{margin-bottom:.3rem}
+.chat-msg.user{background:#C4A3A0;color:#fff;font-size:.8rem;margin-left:auto;max-width:80%}
+.chat-quick{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.chat-quick button{
+  background:#fff;border:1px solid #E8DBD8;color:#C4A3A0;
+  font-size:.7rem;padding:.4rem .8rem;cursor:pointer;font-family:'Noto Serif SC',serif;
+  transition:all .25s;letter-spacing:.03em;
+}
+.chat-quick button:hover{background:#C4A3A0;color:#fff;border-color:#C4A3A0}
+.chat-footer{display:flex;padding:.8rem 1rem;border-top:1px solid #F0E8E6;gap:.5rem}
+.chat-footer textarea{
+  flex:1;border:none;outline:none;font-family:'Noto Serif SC',serif;
+  font-size:.8rem;resize:none;color:#3D2C2C;background:transparent;
+  padding:.3rem 0;line-height:1.5;
+}
+.chat-footer textarea::placeholder{color:#C4B8B8}
+.chat-footer button{
+  background:#C4A3A0;color:#fff;border:none;padding:.4rem 1rem;
+  font-size:.75rem;cursor:pointer;font-family:'Noto Serif SC',serif;
+  letter-spacing:.04em;transition:background .3s;flex-shrink:0;
+}
+.chat-footer button:hover{background:#B08E8B}
+.chat-hours{
+  text-align:center;padding:.6rem;font-size:.65rem;color:#B8936E;
+  background:#FBF8F6;font-weight:300;letter-spacing:.03em;
+}
+@media(max-width:768px){
+  .chat-widget{bottom:1rem;right:1rem}
+  .chat-panel{width:calc(100vw - 2rem);right:-.5rem;bottom:68px}
+  .chat-body{max-height:220px}
+}
+
+/* QR Modal */
+.qr-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.qr-modal-content{background:#fff;padding:2.5rem;text-align:center;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.2)}
+.qr-modal-content img{width:200px;height:auto;display:block}
+.qr-modal-content p{font-size:.8rem;color:#7A6A6A;margin-top:1rem;font-weight:300;letter-spacing:.04em}
+.qr-modal-close{position:absolute;top:.5rem;right:1rem;font-size:1.5rem;color:#C4A3A0;cursor:pointer;line-height:1;transition:color .3s}
+.qr-modal-close:hover{color:#3D2C2C}
 .contact-form-group textarea{height:120px;resize:vertical}
 .contact-form .btn-primary{width:100%}
 .form-success{display:none;text-align:center;padding:2rem}
 .form-success p{color:#7A6A6A;font-size:.9rem;line-height:2}
 
 /* ===== Footer ===== */
-footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
+footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto 4rem}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
-.footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.08em;color:#F0E8E6;margin-bottom:1rem}
-.footer p{font-size:.8rem;line-height:2;font-weight:300;color:#A89A9A}
-.footer h4{font-size:.8rem;letter-spacing:.12em;color:#D4C5C3;margin-bottom:1.2rem;text-transform:uppercase;font-weight:400}
-.footer a{color:#D4B896;text-decoration:none;font-size:.8rem;display:block;margin-bottom:.6rem;transition:color .3s}
-.footer a:hover{color:#F0E8E6}
-.footer-bottom{max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(196,184,184,.15);text-align:center;font-size:.75rem;color:#8A7A7A}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.08em;color:#C4B8B8;margin-bottom:1rem}
+.footer-brand-col p{font-size:.78rem;line-height:2;font-weight:300;color:#888080}
+.footer-contact{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06)}
+.footer-contact p{font-size:.75rem;color:#888080;line-height:1.8;font-weight:300}
+.footer p{font-size:.8rem;line-height:2;font-weight:300;color:#888080}
+.footer h4{font-size:.8rem;letter-spacing:.12em;color:#999090;margin-bottom:1.2rem;text-transform:uppercase;font-weight:400}
+.footer a{color:#888080;text-decoration:none;font-size:.8rem;display:block;margin-bottom:.6rem;transition:color .3s}
+.footer a:hover{color:#C4B8B8}
+.footer-bottom{max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:.75rem;color:#666060}
 
 /* ===== Animations ===== */
 .fade-in{opacity:0;transform:translateY(30px);transition:all .8s ease}
@@ -298,12 +376,12 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
   .nav-links.active{right:0}
   .hamburger{display:flex}
 
-  /* Quick Entry */
-  .quick-entry{margin-top:-2rem;padding:0 1rem}
-  .quick-grid{grid-template-columns:1fr;max-width:300px;gap:.8rem}
-  .quick-card{padding:1.5rem 1.2rem}
-  .quick-icon{font-size:1.8rem;margin-bottom:.4rem}
-  .quick-card h3{font-size:.88rem}
+  /* Cat Nav */
+  .cat-nav{margin-top:-2rem;padding:0 1rem}
+  .cat-grid{grid-template-columns:1fr;max-width:380px;gap:1rem}
+  .cat-card{height:240px}
+  .cat-card-inner{padding:1.8rem 1.5rem}
+  .cat-card h3{font-size:1.1rem}
 
   /* Pillars */
   .pillars{grid-template-columns:1fr;gap:2rem}
@@ -322,6 +400,9 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
 
   /* Story Teaser */
   .story-teaser{margin:0 .5rem;padding:3rem 1.2rem}
+  .story-text p{font-size:.82rem;line-height:2}
+  .story-submit{padding-top:2rem}
+  .story-submit p{font-size:.8rem}
   .story-teaser blockquote{font-size:1rem;line-height:1.9}
 
   /* Testimonials */
@@ -363,19 +444,67 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
   .story-teaser blockquote{font-size:.9rem}
 }
 
-/* ===== Quick Entry (金刚位) ===== */
-.quick-entry{padding:0 2rem;margin-top:-3rem;position:relative;z-index:10}
-.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
-@media(max-width:768px){.quick-grid{grid-template-columns:1fr;max-width:320px;gap:1rem}}
-.quick-card{
-  background:#fff;padding:2rem 1.5rem;text-align:center;text-decoration:none;
-  transition:all .4s ease;display:block;
-  box-shadow:0 4px 20px rgba(61,44,44,.06);
+/* ===== Category Navigation (UR-style) ===== */
+.cat-nav{padding:0 2rem;margin-top:-4rem;position:relative;z-index:10}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:960px;margin:0 auto}
+@media(max-width:768px){.cat-grid{grid-template-columns:1fr;max-width:380px;gap:1rem}}
+.cat-card{
+  position:relative;height:340px;overflow:hidden;text-decoration:none;
+  display:flex;align-items:flex-end;transition:all .5s cubic-bezier(.25,.1,.25,1);
+  box-shadow:0 4px 24px rgba(61,44,44,.06);
 }
-.quick-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(61,44,44,.1)}
-.quick-icon{font-size:2.2rem;margin-bottom:.8rem;display:block}
-.quick-card h3{font-size:.95rem;color:#3D2C2C;font-weight:500;letter-spacing:.04em;margin-bottom:.3rem}
-.quick-card p{font-size:.75rem;color:#B8936E;font-weight:300;letter-spacing:.04em}
+.cat-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(61,44,44,.1)}
+.cat-card-inner{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:2.5rem 2rem;
+}
+.cat-card h3{font-family:'Playfair Display','Noto Serif SC',serif;font-size:1.3rem;font-weight:500;color:#fff;letter-spacing:.06em;margin-bottom:.3rem;position:relative;z-index:1}
+.cat-card p{font-size:.78rem;color:rgba(255,255,255,.8);font-weight:300;letter-spacing:.06em;position:relative;z-index:1}
+.cat-card .cat-line{width:24px;height:1px;background:rgba(255,255,255,.5);margin-bottom:1rem;position:relative;z-index:1;transition:width .4s ease}
+.cat-card:hover .cat-line{width:48px}
+.cat-card .cat-bg{position:absolute;inset:0;transition:transform .6s cubic-bezier(.25,.1,.25,1)}
+.cat-card:hover .cat-bg{transform:scale(1.05)}
+.cat-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 30%,rgba(61,44,44,.45) 100%);
+  z-index:0;
+}
+/* Card 1: 日常浪漫 — soft blush */
+.cat-bg-1{background:linear-gradient(160deg,#E8D5D2 0%,#D4B8B4 40%,#C4A3A0 100%)}
+.cat-bg-1::before{
+  content:'';position:absolute;top:15%;right:10%;width:160px;height:160px;
+  background:radial-gradient(circle,rgba(255,255,255,.2) 0%,transparent 70%);
+  border-radius:50%;
+}
+.cat-bg-1::after{
+  content:'';position:absolute;bottom:20%;left:8%;width:100px;height:100px;
+  background:radial-gradient(circle,rgba(255,255,255,.1) 0%,transparent 70%);
+  border-radius:50%;
+}
+/* Card 2: 手工蕾丝 — warm ivory */
+.cat-bg-2{background:linear-gradient(160deg,#D8CFC4 0%,#C4B8A8 40%,#B0A090 100%)}
+.cat-bg-2::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(255,255,255,.15) 1px,transparent 1px),
+    radial-gradient(circle at 60% 50%,rgba(255,255,255,.12) 1px,transparent 1px),
+    radial-gradient(circle at 40% 70%,rgba(255,255,255,.1) 1.5px,transparent 1.5px),
+    radial-gradient(circle at 80% 20%,rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:60px 60px,80px 80px,50px 50px,70px 70px;
+}
+/* Card 3: 重工定制 — deep noir rose */
+.cat-bg-3{background:linear-gradient(160deg,#4A3035 0%,#3D252A 50%,#2D1D20 100%)}
+.cat-bg-3::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 30% 20%,rgba(196,163,160,.3) 1px,transparent 1px),
+    radial-gradient(circle at 70% 40%,rgba(196,163,160,.25) 1px,transparent 1px),
+    radial-gradient(circle at 50% 60%,rgba(196,163,160,.2) 1.5px,transparent 1.5px),
+    radial-gradient(circle at 25% 75%,rgba(196,163,160,.15) 1px,transparent 1px),
+    radial-gradient(circle at 80% 70%,rgba(196,163,160,.2) 1px,transparent 1px);
+  background-size:50px 50px,70px 70px,45px 45px,65px 65px,55px 55px;
+}
+@media(max-width:768px){.cat-card{height:240px}.cat-card-inner{padding:1.8rem 1.5rem}.cat-card h3{font-size:1.1rem}}
 
 /* ===== Custom scrollbar ===== */
 ::-webkit-scrollbar{width:6px}
@@ -390,9 +519,9 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
   <a href="#" class="nav-brand">Dreamystpet</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">初见</a></li>
-    <li><a href="#products">裙衣橱</a></li>
-    <li><a href="#story">她的故事</a></li>
-    <li><a href="#philosophy">我们的标准</a></li>
+    <li><a href="#products">衣橱</a></li>
+    <li><a href="#story">关于我们</a></li>
+    <li><a href="#philosophy">不忘初心</a></li>
     <li><a href="#contact">联系我们</a></li>
     <li><a href="#atelier" class="nav-cta">定制</a></li>
   </ul>
@@ -406,31 +535,40 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
   <div class="hero-content fade-in">
     <p class="hero-sub">马尔济斯 · 西施 · 约克夏</p>
     <h1>为它，造一场<em>裙摆上的梦</em></h1>
-    <p class="hero-desc">Dreamystpet，专注小型犬设计感裙装的法式浪漫品牌。每一条裙子，都是一件可以穿的作品。</p>
+    <p class="hero-desc">Dreamyst，专注小型犬设计感裙装的法式浪漫品牌。每一条裙子，都是一件可以穿的艺术品。</p>
     <div class="hero-btns">
-      <a href="#products" class="btn-primary">探索裙衣橱</a>
-      <a href="#story" class="btn-secondary">聆听她的故事</a>
+      <a href="#products" class="btn-primary">探索衣橱</a>
+      <a href="#story" class="btn-secondary">关于Dreamyst</a>
     </div>
   </div>
 </section>
 
-<!-- Quick Entry (金刚位) -->
-<section class="quick-entry">
-  <div class="quick-grid">
-    <a href="#products" class="quick-card fade-in">
-      <span class="quick-icon">🌿</span>
-      <h3>日常浪漫</h3>
-      <p>碎花 · 雪纺 · 蓬蓬裙摆</p>
+<!-- Category Navigation -->
+<section class="cat-nav">
+  <div class="cat-grid">
+    <a href="#products" class="cat-card fade-in">
+      <div class="cat-bg cat-bg-1"></div>
+      <div class="cat-card-inner">
+        <div class="cat-line"></div>
+        <h3>日常浪漫</h3>
+        <p>Daily Romance</p>
+      </div>
     </a>
-    <a href="#products" class="quick-card fade-in">
-      <span class="quick-icon">🪡</span>
-      <h3>手工蕾丝</h3>
-      <p>法国蕾丝 · 手工对花 · 手作</p>
+    <a href="#products" class="cat-card fade-in">
+      <div class="cat-bg cat-bg-2"></div>
+      <div class="cat-card-inner">
+        <div class="cat-line"></div>
+        <h3>手工蕾丝</h3>
+        <p>Artisanal Lace</p>
+      </div>
     </a>
-    <a href="#atelier" class="quick-card fade-in">
-      <span class="quick-icon">✨</span>
-      <h3>重工定制</h3>
-      <p>珠片 · 刺绣 · 专属</p>
+    <a href="#atelier" class="cat-card fade-in">
+      <div class="cat-bg cat-bg-3"></div>
+      <div class="cat-card-inner">
+        <div class="cat-line"></div>
+        <h3>重工定制</h3>
+        <p>Haute Couture</p>
+      </div>
     </a>
   </div>
 </section>
@@ -438,12 +576,12 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
 <!-- Brand Pillars -->
 <section>
   <p class="section-tag">Ce que nous croyons</p>
-  <h2 class="section-title">我们相信，小型犬的裙子不该只是「有就行」</h2>
+  <h2 class="section-title">我们相信，小型犬的裙子不该只是「漂亮」</h2>
   <div class="section-divider"></div>
   <div class="pillars">
     <div class="pillar fade-in">
       <div class="pillar-num">01</div>
-      <h3>只为三犬种打版</h3>
+      <h3>只为小犬种打版</h3>
       <p>马尔济斯的胸廓、西施的腰线、约克夏的纤长——它们不是缩小版的大狗。每一条裙子的版型按犬种独立调整，裙摆长度精确到厘米，前胸活动余量反复测试。</p>
     </div>
     <div class="pillar fade-in">
@@ -453,7 +591,7 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
     </div>
     <div class="pillar fade-in">
       <div class="pillar-num">03</div>
-      <h3>好看，但不打扰它</h3>
+      <h3>不只是「好看」</h3>
       <p>所有裙装内里都是婴儿棉内衬，腰部用弹性包边而非勒带。它蹲下、转身、跳上沙发时，裙子只是温柔地跟着——不碍事。</p>
     </div>
   </div>
@@ -462,7 +600,7 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
 <!-- Products -->
 <section id="products" style="background:#fff;">
   <p class="section-tag">La Collection</p>
-  <h2 class="section-title">三条裙子，三种浪漫</h2>
+  <h2 class="section-title">每一件，都是一种浪漫</h2>
   <p class="section-sub">每一条都为一个温柔的念头而设计——散步的早晨、被记住的日子、值得纪念的瞬间。</p>
 
   <div class="products-grid">
@@ -525,12 +663,21 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
 <!-- Story Teaser -->
 <section class="story-teaser fade-in" id="story">
   <p class="section-tag">Notre Histoire</p>
-  <blockquote>
-    四年前，设计师小D领养了一只马尔济斯，取名「梦」。她想给梦买一条好看的裙子——翻了几十页，没有一条是「真正为小型犬做的」好看的。那天晚上她把梦抱上工作台，翻出一块珍藏了很久的法国蕾丝。第一条Dreamystpet裙子，就这样在一张堆满珠片和线头的工作台上诞生了。
-  </blockquote>
-  <p class="author">—— Dreamystpet 创始人</p>
+  <div class="story-text">
+    <p>做了十年女装的小D，从没想过自己会做狗衣服。</p>
+    <p>直到朋友带着马尔济斯来工作室。小狗穿着网购的蕾丝裙，不停蹭——领口勒、面料扎、趴下来裙摆硌肚子。朋友说，找了半年，好看的都不好穿。</p>
+    <p>那晚，她翻出珍藏的法国蕾丝，配了全棉内衬。天快亮的时候，第一条裙子做完了。小狗穿上，走了两圈，没蹭。走到窗边趴下来。蕾丝跟着它的身体一起弯，软软铺在地板上。</p>
+    <p>它的尾巴轻轻晃了一下。</p>
+    <p>Dreamyst 就是这样开始的。一个给小狗做衣服的地方。</p>
+    <p>给它好看，也要给它舒服。因为它只是不会说。</p>
+  </div>
+  <p class="author">—— Dreamyst 创始人</p>
+  <div class="story-submit">
+    <p>每个狗狗都有属于它自己故事。</p>
+    <p>请把你们的故事，投稿到 <span>Dreamyst</span>。</p>
+  </div>
   <div style="margin-top:2rem">
-    <a href="#" class="btn-secondary">阅读完整故事</a>
+    <a href="https://dreamystpet.xyz/" class="btn-secondary">了解更多</a>
   </div>
 </section>
 
@@ -573,7 +720,7 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
     <div class="philosophy-card fade-in">
       <div class="philosophy-icon">🧵</div>
       <h3>面料先过人的皮肤</h3>
-      <p>法国 Solstiss 蕾丝、桑蚕丝内衬、全棉 A 类婴幼儿标准面料。每批面料到厂，第一道检测不是送实验室——是用手背摸。扎手的，一票否决。</p>
+      <p>精选高支蕾丝、全棉内衬、A 类婴幼儿安全标准面料——在 600 元价位里，我们把预算花在面料而非营销上。每批面料到厂第一道检测不是送实验室，是用手背摸。扎手的、刺痒的、有化学味的，当场退回。</p>
     </div>
     <div class="philosophy-card fade-in">
       <div class="philosophy-icon">🪡</div>
@@ -617,7 +764,7 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
         <div>
           <h4>微信</h4>
           <p>D5410025117</p>
-          <img src="wechat-qr.jpg" alt="微信扫码添加 Dreamystpet" class="qr-code">
+          <a href="javascript:void(0)" class="qr-trigger" onclick="document.getElementById('qrModal').style.display='flex'">查看二维码 ›</a>
         </div>
       </div>
       <div class="contact-info-item">
@@ -664,33 +811,37 @@ footer{background:#3D2C2C;color:#C4B8B8;padding:5rem 2rem 2rem}
 <!-- Footer -->
 <footer>
   <div class="footer-grid">
-    <div>
-      <div class="footer-brand">Dreamystpet</div>
-      <p>专注马尔济斯、西施、约克夏的设计感裙装。<br>每一条裙子，都是一件可以穿的作品。</p>
+    <div class="footer-brand-col">
+      <div class="footer-brand">Dreamyst</div>
+      <p>专注马尔济斯、西施、约克夏的设计感裙装。<br>每一条裙子，都是一件可以穿的艺术品。</p>
+      <div class="footer-contact">
+        <p>微信：D5410025117</p>
+        <p>邮箱：Dreamystpet@outlook.com</p>
+      </div>
     </div>
     <div>
-      <h4>探索</h4>
-      <a href="#products">裙衣橱</a>
-      <a href="#story">她的故事</a>
-      <a href="#philosophy">我们的标准</a>
-      <a href="#atelier">重工定制</a>
-    </div>
-    <div>
-      <h4>帮助</h4>
+      <h4>常见问题</h4>
       <a href="#">尺码指南</a>
       <a href="#">护理说明</a>
       <a href="#">定制流程</a>
-      <a href="#">找到我们</a>
+      <a href="#">退换说明</a>
     </div>
     <div>
-      <h4>关注</h4>
+      <h4>关于品牌</h4>
+      <a href="#products">衣橱</a>
+      <a href="#story">关于我们</a>
+      <a href="#philosophy">不忘初心</a>
+      <a href="#atelier">重工定制</a>
+    </div>
+    <div>
+      <h4>关注 Dreamyst</h4>
       <a href="#">小红书 @Dreamystpet</a>
       <a href="#">Instagram @dreamystpet</a>
-      <a href="#">Dreamystpet@outlook.com</a>
+      <a href="#">微信 D5410025117</a>
     </div>
   </div>
   <div class="footer-bottom">
-    © 2026 Dreamystpet. Tous droits réservés.
+    © 2026 Dreamyst. All Rights Reserved.
   </div>
 </footer>
 
@@ -719,6 +870,29 @@ const observer=new IntersectionObserver((entries)=>{
 },{threshold:0.15});
 document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
+// Chat widget
+window.sendQuick=function(text){
+  const chatBody=document.getElementById('chatBody');
+  const chatQuick=document.getElementById('chatQuick');
+  const msg=document.createElement('div');msg.className='chat-msg user';msg.textContent=text;
+  chatBody.insertBefore(msg,chatQuick);
+  setTimeout(()=>{
+    const r=document.createElement('div');r.className='chat-msg bot';
+    if(text.includes('尺码'))r.innerHTML='<p>小型犬尺码按背长和胸围来选——XS适合约克夏，S适合马尔济斯，M适合西施。不确定的话量一下发给我们帮你推荐 🤎</p>';
+    else if(text.includes('定制'))r.innerHTML='<p>定制流程：告诉我们犬种和想法 → 出设计稿 → 确认后手作 → 2-3周寄出。可以点导航里的「定制」直接填表 ☺️</p>';
+    else if(text.includes('收到'))r.innerHTML='<p>现货48小时内发出，重工定制需要2-3周手作时间。每一条都是按订单做的 🐾</p>';
+    else if(text.includes('洗护'))r.innerHTML='<p>日常款套洗衣袋机洗。蕾丝和重工款建议手洗、平铺晾干。具体护理吊牌上都有 ✨</p>';
+    else r.innerHTML='<p>收到，工作时间客服会尽快回复。急的话可以直接加微信 D5410025117 💛</p>';
+    chatBody.insertBefore(r,chatQuick);chatBody.scrollTop=chatBody.scrollHeight;
+  },500);
+};
+window.sendChatMsg=function(){
+  const input=document.getElementById('chatInput');
+  const text=input.value.trim();if(!text)return;
+  window.sendQuick(text);input.value='';
+};
+document.getElementById('chatInput').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();window.sendChatMsg()}});
+
 // Contact form
 const contactForm=document.getElementById('contactForm');
 if(contactForm){
@@ -742,5 +916,54 @@ if(contactForm){
   });
 }
 </script>
+
+<!-- Live Chat Widget -->
+<div class="chat-widget" id="chatWidget">
+  <button type="button" class="chat-bubble" id="chatBubble" aria-label="在线客服" onclick="document.getElementById('chatPanel').classList.toggle('active');this.style.display=document.getElementById('chatPanel').classList.contains('active')?'none':'flex'">
+    <span class="chat-bubble-icon">💬</span>
+    <span class="chat-bubble-text">客服</span>
+  </button>
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">D</div>
+        <div>
+          <p class="chat-title">Dreamyst 客服</p>
+          <p class="chat-status">在线</p>
+        </div>
+      </div>
+      <button type="button" class="chat-close" id="chatClose" onclick="document.getElementById('chatPanel').classList.remove('active');document.getElementById('chatBubble').style.display='flex'">&times;</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">
+        <p>你好呀 👋 欢迎来到 Dreamyst。</p>
+        <p>有什么可以帮你的？</p>
+      </div>
+      <div class="chat-quick" id="chatQuick">
+        <button type="button" onclick="sendQuick('尺码怎么选？')">尺码怎么选？</button>
+        <button type="button" onclick="sendQuick('定制流程是什么？')">定制流程是什么？</button>
+        <button type="button" onclick="sendQuick('多久能收到？')">多久能收到？</button>
+        <button type="button" onclick="sendQuick('怎么洗护？')">怎么洗护？</button>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <textarea id="chatInput" placeholder="输入你的问题…" rows="1"></textarea>
+      <button type="button" id="chatSend" onclick="window.sendChatMsg()">发送</button>
+    </div>
+    <div class="chat-hours">
+      <span>🕐</span> 人工在线：周一至周五 10:00–18:00
+    </div>
+  </div>
+</div>
+
+<!-- QR Code Modal -->
+<div class="qr-modal" id="qrModal" onclick="this.style.display='none'">
+  <div class="qr-modal-content" onclick="event.stopPropagation()">
+    <span class="qr-modal-close" onclick="document.getElementById('qrModal').style.display='none'">&times;</span>
+    <img src="wechat-qr.jpg" alt="微信扫码添加 Dreamyst">
+    <p>扫码添加微信</p>
+  </div>
+</div>
+
 </body>
 </html>
