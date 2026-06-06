@@ -151,8 +151,8 @@ section{padding:6rem 2rem}
 .product-card:hover .product-img-overlay p{transform:translateY(0)}
 .product-tag{
   position:absolute;top:1rem;left:1rem;z-index:2;
-  background:#C4A3A0;color:#fff;font-size:.7rem;padding:.3rem .8rem;
-  letter-spacing:.1em;transition:all .35s ease;
+  background:#C4A3A0;color:#fff;font-size:.65rem;padding:.35rem .9rem;
+  letter-spacing:.12em;transition:all .35s ease;font-weight:500;
 }
 .product-card:hover .product-tag{background:#B08E8B}
 .product-info{padding:1.8rem}
@@ -160,7 +160,12 @@ section{padding:6rem 2rem}
 .product-tagline{font-size:.82rem;color:#B8936E;font-style:italic;margin-bottom:.8rem}
 .product-desc{font-size:.82rem;color:#7A6A6A;line-height:1.8;font-weight:300;margin-bottom:1rem}
 .product-price{font-size:1.1rem;color:#3D2C2C;font-weight:500}
-.product-buy{font-size:.72rem;color:#B8936E;margin-top:.7rem;padding-top:.7rem;border-top:1px solid #F0E8E6;letter-spacing:.04em;font-weight:300}
+.product-actions{display:flex;gap:.5rem;margin-top:.8rem;padding-top:.8rem;border-top:1px solid #F0E8E6}
+.product-btn-more,.product-btn-buy{padding:.45rem 0;font-size:.7rem;letter-spacing:.06em;cursor:pointer;text-align:center;transition:all .3s;text-decoration:none;flex:1;font-family:'Noto Serif SC',serif}
+.product-btn-more{background:transparent;color:#7A6A6A;border:1px solid #E0D5D5}
+.product-btn-more:hover{color:#3D2C2C;border-color:#C4A3A0}
+.product-btn-buy{background:#C4A3A0;color:#fff;border:1px solid #C4A3A0}
+.product-btn-buy:hover{background:#B08E8B}
 .product-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
 .product-features span{
   font-size:.72rem;color:#B8936E;background:#FBF8F6;
@@ -217,12 +222,22 @@ section{padding:6rem 2rem}
 .testimonial-author{font-size:.78rem;color:#B8936E;letter-spacing:.04em}
 
 /* ===== Philosophy ===== */
-.philosophy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;max-width:1100px;margin:0 auto}
-@media(max-width:768px){.philosophy-grid{grid-template-columns:1fr;gap:2rem}}
-.philosophy-card{background:#fff;padding:3rem 2.5rem}
-.philosophy-card h3{font-family:'Playfair Display','Noto Serif SC',serif;font-size:1.2rem;font-weight:500;margin-bottom:1rem;letter-spacing:.04em}
-.philosophy-card p{font-size:.88rem;color:#7A6A6A;line-height:1.9;font-weight:300}
-.philosophy-icon{font-size:2rem;margin-bottom:1rem}
+.philosophy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1000px;margin:0 auto}
+@media(max-width:768px){.philosophy-grid{grid-template-columns:repeat(2,1fr);gap:.8rem}}
+.philosophy-card{background:#fff;padding:1.5rem 1.2rem;text-align:center}
+.philosophy-card h3{font-size:.85rem;font-weight:500;margin-bottom:.3rem;letter-spacing:.04em;color:#3D2C2C}
+.philosophy-card p{font-size:.72rem;color:#8A7A7A;line-height:1.7;font-weight:300}
+.philosophy-icon{font-size:1.3rem;margin-bottom:.5rem}
+
+/* ===== Service Cards ===== */
+.service-section{padding:2rem 2rem 4rem;background:#fff}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:800px;margin:0 auto}
+.service-card{text-align:center;padding:1.5rem 1rem;background:#FAF7F2;transition:all .3s ease}
+.service-card:hover{background:#F5EDED;transform:translateY(-2px)}
+.service-icon{font-size:1.4rem;display:block;margin-bottom:.5rem}
+.service-card h4{font-size:.8rem;font-weight:500;color:#3D2C2C;margin-bottom:.2rem;letter-spacing:.04em}
+.service-card p{font-size:.68rem;color:#8A7A7A;font-weight:300}
+@media(max-width:768px){.service-grid{grid-template-columns:repeat(2,1fr);gap:.6rem}.service-card{padding:1.2rem .8rem}.service-icon{font-size:1.2rem}.service-card h4{font-size:.75rem}.service-card p{font-size:.65rem}}
 
 /* ===== Atelier ===== */
 .atelier{
@@ -357,7 +372,7 @@ section{padding:6rem 2rem}
 
 /* ===== Footer ===== */
 footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto 4rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1000px;margin:0 auto 4rem}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
 .footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.08em;color:#C4B8B8;margin-bottom:1rem}
 .footer-brand-col p{font-size:.78rem;line-height:2;font-weight:300;color:#888080}
@@ -367,6 +382,16 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
 .footer h4{font-size:.8rem;letter-spacing:.12em;color:#999090;margin-bottom:1.2rem;text-transform:uppercase;font-weight:400}
 .footer a{color:#888080;text-decoration:none;font-size:.8rem;display:block;margin-bottom:.6rem;transition:color .3s}
 .footer a:hover{color:#C4B8B8}
+.footer-social{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+.soc-circle{
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(255,255,255,.04);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-decoration:none;
+  transition:all .3s ease;font-size:1rem;line-height:1;
+}
+.soc-circle span{font-size:.5rem;color:#888080;margin-top:1px;letter-spacing:.04em;transition:color .3s}
+.soc-circle:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.soc-circle:hover span{color:#C4B8B8}
 .footer-bottom{max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;font-size:.75rem;color:#666060}
 
 /* ===== Animations ===== */
@@ -427,10 +452,10 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
   .testimonial-quote{font-size:.78rem}
 
   /* Philosophy */
-  .philosophy-grid{grid-template-columns:1fr;gap:1.5rem}
-  .philosophy-card{padding:2rem 1.5rem}
-  .philosophy-card h3{font-size:1.05rem}
-  .philosophy-card p{font-size:.82rem}
+  .philosophy-grid{grid-template-columns:repeat(2,1fr);gap:.8rem}
+  .philosophy-card{padding:1.2rem .8rem}
+  .philosophy-card h3{font-size:.78rem}
+  .philosophy-card p{font-size:.68rem}
 
   /* Atelier */
   .atelier{padding:4rem 1rem}
@@ -616,7 +641,10 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
         <div class="product-features">
           <span>法国蕾丝</span><span>三层雪纺</span><span>棉质内衬</span><span>四色可选</span>
         </div>
-        <p class="product-buy">小红书 / 微信下单 · 帮你选尺码</p>
+        <div class="product-actions">
+          <a href="#" class="product-btn-more">了解更多</a>
+          <a href="#" class="product-btn-buy">微信下单</a>
+        </div>
       </div>
     </div>
 
@@ -635,7 +663,10 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
         <div class="product-features">
           <span>手绘印花</span><span>欧根纱裙摆</span><span>弹力腰封</span><span>可机洗</span>
         </div>
-        <p class="product-buy">小红书 / 微信下单 · 帮你选尺码</p>
+        <div class="product-actions">
+          <a href="#" class="product-btn-more">了解更多</a>
+          <a href="#" class="product-btn-buy">微信下单</a>
+        </div>
       </div>
     </div>
 
@@ -654,7 +685,10 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
         <div class="product-features">
           <span>600+珠片</span><span>真丝内衬</span><span>每月8条</span><span>可绣名字</span>
         </div>
-        <p class="product-buy">小红书 / 微信下单 · 帮你选尺码</p>
+        <div class="product-actions">
+          <a href="#" class="product-btn-more">了解更多</a>
+          <a href="#" class="product-btn-buy">微信下单</a>
+        </div>
       </div>
     </div>
   </div>
@@ -707,7 +741,7 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
 </section>
 
 <!-- Philosophy -->
-<section id="philosophy" style="background:#fff;">
+<section id="philosophy" style="background:#fff;padding:3rem 2rem;">
   <p class="section-tag">Notre Savoir-Faire</p>
   <h2 class="section-title">Dreamystpet 的标准</h2>
   <p class="section-sub">每一条裙子的背后，是对面料、版型和工艺的不妥协。</p>
@@ -716,22 +750,48 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
     <div class="philosophy-card fade-in">
       <div class="philosophy-icon">✂️</div>
       <h3>只为小型犬</h3>
-      <p>同一条花园蓬蓬裙，给马尔济斯和给约克夏的版——前胸弧度不同、裙摆长度不同、腰封位置不同。你看不出来，但它们穿上后知道。</p>
+      <p>马尔济斯、西施、约克夏——每种犬种独立打版，精确到毫米。你看不出来，但它们穿上后知道。</p>
     </div>
     <div class="philosophy-card fade-in">
       <div class="philosophy-icon">🧵</div>
       <h3>面料先过人的皮肤</h3>
-      <p>精选高支蕾丝、全棉内衬、A 类婴幼儿安全标准面料——在 600 元价位里，我们把预算花在面料而非营销上。每批面料到厂第一道检测不是送实验室，是用手背摸。扎手的、刺痒的、有化学味的，当场退回。</p>
+      <p>四道检测关卡，手背测试是第一步。扎手的、刺痒的、有化学味的——当场退回。</p>
     </div>
     <div class="philosophy-card fade-in">
       <div class="philosophy-icon">🪡</div>
       <h3>慢，就是快</h3>
-      <p>蕾丝手工对花、珠片逐颗手缝、三道质检。所有版师均有高级成衣手作背景——她们习惯了对人衣服的标准，带到宠物裙上，就是降维。</p>
+      <p>蕾丝手工对花、珠片逐颗手缝。所有版师均有高级成衣手作背景。</p>
     </div>
     <div class="philosophy-card fade-in">
       <div class="philosophy-icon">🐾</div>
-      <h3>通过「奔跑测试」才能上架</h3>
-      <p>每款新品至少两只不同犬种试穿——穿着奔跑、打滚、蜷缩——通过了才上架。好看是底线，好穿是信仰。</p>
+      <h3>通过「奔跑测试」才上架</h3>
+      <p>每款新品至少两只不同犬种试穿——好看是底线，好穿是信仰。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Service Cards -->
+<section class="service-section">
+  <div class="service-grid">
+    <div class="service-card fade-in">
+      <span class="service-icon">🔄</span>
+      <h4>售后无忧</h4>
+      <p>7天无理由退换</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">📏</span>
+      <h4>尺码包换</h4>
+      <p>不合适免费换码</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">🪡</span>
+      <h4>手作工艺</h4>
+      <p>版师手工质检</p>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">💬</span>
+      <h4>护理指导</h4>
+      <p>免费一对一咨询</p>
     </div>
   </div>
 </section>
@@ -815,9 +875,12 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
     <div class="footer-brand-col">
       <div class="footer-brand">Dreamyst</div>
       <p>专注马尔济斯、西施、约克夏的设计感裙装。<br>每一条裙子，都是一件可以穿的艺术品。</p>
-      <div class="footer-contact">
-        <p>微信：D5410025117</p>
-        <p>邮箱：Dreamystpet@outlook.com</p>
+      <div class="footer-social">
+        <a href="#" class="soc-circle" title="微信" onclick="document.getElementById('qrModal').style.display='flex';return false">💬<span>微信</span></a>
+        <a href="https://weibo.com/u/8492452669" target="_blank" rel="noopener" class="soc-circle">📢<span>微博</span></a>
+        <a href="#" class="soc-circle" title="小红书">📕<span>小红书</span></a>
+        <a href="#" class="soc-circle" title="抖音">🎵<span>抖音</span></a>
+        <a href="#" class="soc-circle" title="哔哩哔哩">📺<span>B站</span></a>
       </div>
     </div>
     <div>
@@ -833,12 +896,6 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
       <a href="#story">关于我们</a>
       <a href="#philosophy">不忘初心</a>
       <a href="#atelier">重工定制</a>
-    </div>
-    <div>
-      <h4>关注 Dreamyst</h4>
-      <a href="#">小红书 @Dreamystpet</a>
-      <a href="#">Instagram @dreamystpet</a>
-      <a href="#">微信 D5410025117</a>
     </div>
   </div>
   <div class="footer-bottom">
