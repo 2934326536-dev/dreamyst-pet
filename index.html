@@ -4,16 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Dreamystpet — 专注马尔济斯、西施、约克夏的设计感裙装。法式浪漫少女风，手工蕾丝裙、重工珠片定制。">
+<meta name="theme-color" content="#FAF7F2">
+<meta name="author" content="Dreamystpet">
+<meta name="keywords" content="宠物服饰,小型犬衣服,马尔济斯裙子,西施犬裙,约克夏服饰,法式宠物裙装,手工蕾丝裙,宠物高定,Dreamystpet">
+<link rel="canonical" href="https://dreamystpet.cn/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dreamystpet">
+<meta property="og:title" content="Dreamystpet | 小型犬设计感裙装">
+<meta property="og:description" content="专注马尔济斯、西施、约克夏的设计感裙装。法式浪漫少女风，手工蕾丝裙、重工珠片定制。">
+<meta property="og:url" content="https://dreamystpet.cn/">
+<meta property="og:locale" content="zh_CN">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dreamystpet | 小型犬设计感裙装">
+<meta name="twitter:description" content="专注马尔济斯、西施、约克夏的设计感裙装。法式浪漫少女风，手工蕾丝裙、重工珠片定制。">
+<!-- Favicon (inline SVG) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23C4A3A0'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='18' font-weight='600' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 <title>Dreamystpet | 小型犬设计感裙装</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Brand",
+  "name":"Dreamystpet",
+  "description":"专注马尔济斯、西施、约克夏的设计感裙装。法式浪漫少女风，手工蕾丝裙、重工珠片定制。",
+  "url":"https://dreamystpet.cn/"
+}
+</script>
 <style>
 /* ===== Reset & Base ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth;font-size:16px;scroll-padding-top:80px}
 body{
-  font-family:'Noto Serif SC','Playfair Display',Georgia,serif;
+  font-family:'Georgia','STSong','Songti SC','SimSun','Georgia','STSong','Songti SC',serif;
   color:#3D2C2C;
   background:#FAF7F2;
   line-height:1.8;
@@ -21,7 +45,8 @@ body{
   overflow-x:hidden;
 }
 
-/* ===== Navigation ===== */
+/* ===== Scroll offset for fixed nav ===== */
+:target{scroll-margin-top:80px}
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:1.2rem 2rem;
@@ -37,7 +62,7 @@ nav.scrolled{
 }
 nav.scrolled .nav-brand{font-size:1.2rem}
 .nav-brand{
-  font-family:'Playfair Display',serif;
+  font-family:'Georgia',serif;
   font-size:1.5rem;font-weight:600;letter-spacing:.08em;
   color:#3D2C2C;text-decoration:none;
   transition:font-size .4s ease;
@@ -86,9 +111,15 @@ nav.scrolled .nav-brand{font-size:1.2rem}
   border-radius:50%;
 }
 .hero-content{position:relative;z-index:1;max-width:700px}
+.hero-deco{position:absolute;z-index:0;pointer-events:none}
+.hero-deco-1{top:18%;left:8%;width:40px;height:40px;animation:floatDeco 7s ease-in-out infinite}
+.hero-deco-2{bottom:15%;right:6%;width:60px;height:60px;animation:floatDeco 9s ease-in-out 1.5s infinite}
+.hero-deco-3{top:65%;left:12%;width:35px;height:35px;animation:floatDeco 8s ease-in-out 3s infinite}
+@keyframes floatDeco{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-15px) rotate(5deg)}}
+@media(max-width:768px){.hero-deco{opacity:.5}}
 .hero-sub{font-size:.85rem;letter-spacing:.2em;color:#B8936E;margin-bottom:1.5rem;text-transform:uppercase}
 .hero h1{
-  font-family:'Playfair Display','Noto Serif SC',serif;
+  font-family:'Georgia','STSong','Songti SC',serif;
   font-size:clamp(2.2rem,5vw,3.6rem);font-weight:500;line-height:1.35;
   letter-spacing:.04em;margin-bottom:1.2rem;color:#3D2C2C;
 }
@@ -101,7 +132,7 @@ nav.scrolled .nav-brand{font-size:1.2rem}
 .btn-primary,.btn-secondary{
   padding:.9rem 2.4rem;font-size:.85rem;letter-spacing:.08em;
   cursor:pointer;transition:all .35s;text-decoration:none;display:inline-block;
-  font-family:'Noto Serif SC',serif;
+  font-family:'Georgia','STSong','Songti SC',serif;
 }
 .btn-primary{background:#C4A3A0;color:#fff;border:none}
 .btn-primary:hover{background:#B08E8B;transform:translateY(-1px);box-shadow:0 8px 24px rgba(196,163,160,.25)}
@@ -112,7 +143,7 @@ nav.scrolled .nav-brand{font-size:1.2rem}
 section{padding:6rem 2rem}
 .section-tag{font-size:.78rem;letter-spacing:.2em;color:#B8936E;text-transform:uppercase;text-align:center;margin-bottom:1rem}
 .section-title{
-  font-family:'Playfair Display','Noto Serif SC',serif;
+  font-family:'Georgia','STSong','Songti SC',serif;
   font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;
   text-align:center;letter-spacing:.04em;margin-bottom:1rem;color:#3D2C2C;
 }
@@ -135,11 +166,15 @@ section{padding:6rem 2rem}
   position:relative;overflow:hidden;
 }
 .product-img-inner{
-  font-family:'Playfair Display',serif;
+  font-family:'Georgia',serif;
   font-size:3rem;color:#D4C5C3;font-style:italic;
   transition:transform .5s cubic-bezier(.25,.1,.25,1);
 }
-.product-card:hover .product-img-inner{transform:scale(1.06)}
+.product-svg{
+  width:100%;height:100%;display:block;
+  transition:transform .5s cubic-bezier(.25,.1,.25,1);
+}
+.product-card:hover .product-svg{transform:scale(1.06)}
 .product-img-overlay{
   position:absolute;inset:0;
   background:linear-gradient(180deg,transparent 50%,rgba(61,44,44,.55) 100%);
@@ -161,7 +196,7 @@ section{padding:6rem 2rem}
 .product-desc{font-size:.82rem;color:#7A6A6A;line-height:1.8;font-weight:300;margin-bottom:1rem}
 .product-price{font-size:1.1rem;color:#3D2C2C;font-weight:500}
 .product-actions{display:flex;gap:.5rem;margin-top:.8rem;padding-top:.8rem;border-top:1px solid #F0E8E6}
-.product-btn-more,.product-btn-buy{padding:.45rem 0;font-size:.7rem;letter-spacing:.06em;cursor:pointer;text-align:center;transition:all .3s;text-decoration:none;flex:1;font-family:'Noto Serif SC',serif}
+.product-btn-more,.product-btn-buy{padding:.45rem 0;font-size:.7rem;letter-spacing:.06em;cursor:pointer;text-align:center;transition:all .3s;text-decoration:none;flex:1;font-family:'Georgia','STSong','Songti SC',serif}
 .product-btn-more{background:transparent;color:#7A6A6A;border:1px solid #E0D5D5}
 .product-btn-more:hover{color:#3D2C2C;border-color:#C4A3A0}
 .product-btn-buy{background:#C4A3A0;color:#fff;border:1px solid #C4A3A0}
@@ -180,7 +215,7 @@ section{padding:6rem 2rem}
 }
 @media(max-width:768px){.story-teaser{margin:0 1rem;padding:3rem 1.5rem}}
 .story-teaser blockquote{
-  font-family:'Playfair Display','Noto Serif SC',serif;
+  font-family:'Georgia','STSong','Songti SC',serif;
   font-size:clamp(1.1rem,2vw,1.35rem);font-style:italic;
   color:#5C4A4A;line-height:2;max-width:600px;margin:0 auto 1.5rem;
   font-weight:400;
@@ -224,11 +259,11 @@ section{padding:6rem 2rem}
   text-align:center;padding:6rem 2rem;
 }
 .atelier-content{max-width:600px;margin:0 auto}
-.atelier h2{font-family:'Playfair Display','Noto Serif SC',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;margin-bottom:1rem}
+.atelier h2{font-family:'Georgia','STSong','Songti SC',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:500;margin-bottom:1rem}
 .atelier p{font-size:.95rem;color:#7A6A6A;line-height:2;font-weight:300;margin-bottom:2rem}
 .atelier-stats{display:flex;justify-content:center;gap:4rem;margin-bottom:2.5rem;flex-wrap:wrap}
 .atelier-stat{text-align:center}
-.atelier-stat .num{font-family:'Playfair Display',serif;font-size:2.5rem;color:#C4A3A0;font-style:italic}
+.atelier-stat .num{font-family:'Georgia',serif;font-size:2.5rem;color:#C4A3A0;font-style:italic}
 .atelier-stat .label{font-size:.78rem;color:#B8936E;letter-spacing:.08em;margin-top:.3rem}
 
 /* ===== Contact ===== */
@@ -257,7 +292,7 @@ section{padding:6rem 2rem}
 }
 .contact-form-group input,.contact-form-group textarea{
   width:100%;padding:.75rem 1rem;border:1px solid #E0D5D5;
-  font-family:'Noto Serif SC',serif;font-size:.85rem;color:#3D2C2C;
+  font-family:'Georgia','STSong','Songti SC',serif;font-size:.85rem;color:#3D2C2C;
   background:#FAF7F2;transition:border-color .3s;outline:none;
 }
 .contact-form-group input:focus,.contact-form-group textarea:focus{border-color:#C4A3A0}
@@ -266,7 +301,7 @@ section{padding:6rem 2rem}
 .qr-code{display:none}
 
 /* Chat Widget */
-.chat-widget{position:fixed;bottom:2rem;right:2rem;z-index:998;font-family:'Noto Serif SC',serif}
+.chat-widget{position:fixed;bottom:2rem;right:2rem;z-index:998;font-family:'Georgia','STSong','Songti SC',serif}
 .chat-bubble{
   width:56px;height:56px;border-radius:50%;background:#C4A3A0;color:#fff;
   border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;
@@ -290,7 +325,7 @@ section{padding:6rem 2rem}
 .chat-avatar{
   width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.25);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;
+  font-family:'Georgia',serif;font-size:1.1rem;font-weight:600;
 }
 .chat-title{font-size:.82rem;font-weight:500;letter-spacing:.03em}
 .chat-status{font-size:.65rem;opacity:.8;font-weight:300}
@@ -304,20 +339,20 @@ section{padding:6rem 2rem}
 .chat-quick{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
 .chat-quick button{
   background:#fff;border:1px solid #E8DBD8;color:#C4A3A0;
-  font-size:.7rem;padding:.4rem .8rem;cursor:pointer;font-family:'Noto Serif SC',serif;
+  font-size:.7rem;padding:.4rem .8rem;cursor:pointer;font-family:'Georgia','STSong','Songti SC',serif;
   transition:all .25s;letter-spacing:.03em;
 }
 .chat-quick button:hover{background:#C4A3A0;color:#fff;border-color:#C4A3A0}
 .chat-footer{display:flex;padding:.8rem 1rem;border-top:1px solid #F0E8E6;gap:.5rem}
 .chat-footer textarea{
-  flex:1;border:none;outline:none;font-family:'Noto Serif SC',serif;
+  flex:1;border:none;outline:none;font-family:'Georgia','STSong','Songti SC',serif;
   font-size:.8rem;resize:none;color:#3D2C2C;background:transparent;
   padding:.3rem 0;line-height:1.5;
 }
 .chat-footer textarea::placeholder{color:#C4B8B8}
 .chat-footer button{
   background:#C4A3A0;color:#fff;border:none;padding:.4rem 1rem;
-  font-size:.75rem;cursor:pointer;font-family:'Noto Serif SC',serif;
+  font-size:.75rem;cursor:pointer;font-family:'Georgia','STSong','Songti SC',serif;
   letter-spacing:.04em;transition:background .3s;flex-shrink:0;
 }
 .chat-footer button:hover{background:#B08E8B}
@@ -353,7 +388,7 @@ section{padding:6rem 2rem}
 footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1000px;margin:0 auto 4rem}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
-.footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;letter-spacing:.08em;color:#C4B8B8;margin-bottom:1rem}
+.footer-brand{font-family:'Georgia',serif;font-size:1.4rem;letter-spacing:.08em;color:#C4B8B8;margin-bottom:1rem}
 .footer-brand-col p{font-size:.78rem;line-height:2;font-weight:300;color:#888080}
 .footer-contact{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06)}
 .footer-contact p{font-size:.75rem;color:#888080;line-height:1.8;font-weight:300}
@@ -473,7 +508,7 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
   position:absolute;inset:0;display:flex;flex-direction:column;
   justify-content:flex-end;padding:2.5rem 2rem;
 }
-.cat-card h3{font-family:'Playfair Display','Noto Serif SC',serif;font-size:1.3rem;font-weight:500;color:#fff;letter-spacing:.06em;margin-bottom:.3rem;position:relative;z-index:1}
+.cat-card h3{font-family:'Georgia','STSong','Songti SC',serif;font-size:1.3rem;font-weight:500;color:#fff;letter-spacing:.06em;margin-bottom:.3rem;position:relative;z-index:1}
 .cat-card p{font-size:.78rem;color:rgba(255,255,255,.8);font-weight:300;letter-spacing:.06em;position:relative;z-index:1}
 .cat-card .cat-line{width:24px;height:1px;background:rgba(255,255,255,.5);margin-bottom:1rem;position:relative;z-index:1;transition:width .4s ease}
 .cat-card:hover .cat-line{width:48px}
@@ -525,6 +560,36 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:#FAF7F2}
 ::-webkit-scrollbar-thumb{background:#D4C5C3;border-radius:3px}
+
+/* ===== FAQ ===== */
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid #F0E8E6}
+.faq-item summary{
+  cursor:pointer;padding:1.2rem 0;font-size:.9rem;color:#3D2C2C;
+  letter-spacing:.04em;list-style:none;display:flex;justify-content:space-between;align-items:center;
+  transition:color .3s;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.2rem;color:#C4A3A0;transition:transform .3s;font-weight:300}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{color:#C4A3A0}
+.faq-answer{padding:0 0 1.2rem;animation:faqOpen .3s ease}
+.faq-answer p{font-size:.85rem;color:#7A6A6A;line-height:2;font-weight:300}
+@keyframes faqOpen{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== Back to top ===== */
+.back-top{
+  position:fixed;bottom:5.5rem;right:2rem;z-index:997;
+  width:44px;height:44px;border-radius:50%;
+  background:#fff;border:1px solid #E0D5D5;color:#C4A3A0;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1.1rem;
+  opacity:0;pointer-events:none;transition:all .35s ease;
+  box-shadow:0 4px 16px rgba(61,44,44,.08);
+}
+.back-top.visible{opacity:1;pointer-events:auto}
+.back-top:hover{background:#C4A3A0;color:#fff;border-color:#C4A3A0;transform:translateY(-2px)}
+@media(max-width:768px){.back-top{bottom:4.5rem;right:1rem;width:40px;height:40px}}
 </style>
 </head>
 <body>
@@ -537,6 +602,7 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
     <li><a href="#products">衣橱</a></li>
     <li><a href="#story">关于我们</a></li>
     <li><a href="#philosophy">不忘初心</a></li>
+    <li><a href="#faq">常见问题</a></li>
     <li><a href="#contact">联系我们</a></li>
     <li><a href="#atelier" class="nav-cta">定制</a></li>
   </ul>
@@ -547,6 +613,30 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
 
 <!-- Hero -->
 <section class="hero" id="home">
+  <!-- decorative SVG: floating paw prints -->
+  <svg class="hero-deco hero-deco-1" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <ellipse cx="20" cy="24" rx="7" ry="5" fill="none" stroke="#C4A3A0" stroke-width="1" opacity=".3"/>
+    <circle cx="13" cy="16" r="2.5" fill="none" stroke="#C4A3A0" stroke-width="1" opacity=".3"/>
+    <circle cx="20" cy="13" r="2.5" fill="none" stroke="#C4A3A0" stroke-width="1" opacity=".3"/>
+    <circle cx="27" cy="16" r="2.5" fill="none" stroke="#C4A3A0" stroke-width="1" opacity=".3"/>
+    <circle cx="30" cy="22" r="2" fill="none" stroke="#C4A3A0" stroke-width="1" opacity=".3"/>
+  </svg>
+  <svg class="hero-deco hero-deco-2" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#B8936E" stroke-width=".8" opacity=".25">
+      <path d="M30 10 Q35 15 30 20 Q25 15 30 10 Z"/>
+      <path d="M20 25 Q25 30 20 35 Q15 30 20 25 Z"/>
+      <path d="M40 25 Q45 30 40 35 Q35 30 40 25 Z"/>
+      <path d="M30 30 Q35 35 30 40 Q25 35 30 30 Z"/>
+      <path d="M30 20 Q33 25 30 28 Q27 25 30 20 Z"/>
+    </g>
+  </svg>
+  <svg class="hero-deco hero-deco-3" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <ellipse cx="20" cy="24" rx="7" ry="5" fill="none" stroke="#B8936E" stroke-width="1" opacity=".2"/>
+    <circle cx="13" cy="16" r="2.5" fill="none" stroke="#B8936E" stroke-width="1" opacity=".2"/>
+    <circle cx="20" cy="13" r="2.5" fill="none" stroke="#B8936E" stroke-width="1" opacity=".2"/>
+    <circle cx="27" cy="16" r="2.5" fill="none" stroke="#B8936E" stroke-width="1" opacity=".2"/>
+    <circle cx="30" cy="22" r="2" fill="none" stroke="#B8936E" stroke-width="1" opacity=".2"/>
+  </svg>
   <div class="hero-content fade-in">
     <p class="hero-sub">马尔济斯 · 西施 · 约克夏</p>
     <h1>为它，造一场<em>裙摆上的梦</em></h1>
@@ -603,7 +693,27 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
     <!-- Product 1 -->
     <div class="product-card fade-in">
       <div class="product-img">
-        <div class="product-img-inner">lace</div>
+        <svg class="product-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-label="蕾丝晨光连衣裙插画">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5EDED"/><stop offset="1" stop-color="#F0E8E6"/></linearGradient></defs>
+          <rect width="200" height="280" fill="url(#g1)"/>
+          <!-- dress silhouette -->
+          <path d="M85 40 Q100 35 115 40 L118 55 L110 60 L110 70 Q120 75 122 85 L125 100 L130 130 Q135 160 138 200 Q140 230 135 250 L65 250 Q60 230 62 200 Q65 160 70 130 L75 100 L78 85 Q80 75 90 70 L90 60 L82 55 Z" fill="none" stroke="#C4A3A0" stroke-width="1.2" stroke-linejoin="round"/>
+          <!-- lace dots -->
+          <circle cx="92" cy="85" r="1.5" fill="#D4C5C3"/><circle cx="100" cy="82" r="1.5" fill="#D4C5C3"/><circle cx="108" cy="85" r="1.5" fill="#D4C5C3"/>
+          <circle cx="95" cy="95" r="1" fill="#D4C5C3"/><circle cx="105" cy="95" r="1" fill="#D4C5C3"/>
+          <!-- collar v -->
+          <path d="M92 60 L100 68 L108 60" fill="none" stroke="#C4A3A0" stroke-width="1"/>
+          <!-- bow -->
+          <path d="M95 72 Q90 68 88 72 Q90 76 95 73 Q105 73 112 72 Q116 76 112 68 Q110 72 105 73 Z" fill="none" stroke="#C4A3A0" stroke-width="1"/>
+          <!-- skirt layers -->
+          <path d="M70 130 Q100 125 130 130" fill="none" stroke="#D4C5C3" stroke-width="1" stroke-dasharray="3,3"/>
+          <path d="M65 165 Q100 158 135 165" fill="none" stroke="#D4C5C3" stroke-width="1" stroke-dasharray="3,3"/>
+          <path d="M62 200 Q100 192 138 200" fill="none" stroke="#D4C5C3" stroke-width="1" stroke-dasharray="3,3"/>
+          <!-- hem lace scallop -->
+          <path d="M65 250 Q70 255 75 250 Q80 255 85 250 Q90 255 95 250 Q100 255 105 250 Q110 255 115 250 Q120 255 125 250 Q130 255 135 250" fill="none" stroke="#C4A3A0" stroke-width="1.2"/>
+          <!-- small flowers -->
+          <g stroke="#D4C5C3" stroke-width=".8" fill="none"><path d="M80 150 Q82 147 85 150 Q82 153 80 150 Z"/><path d="M115 180 Q117 177 120 180 Q117 183 115 180 Z"/><path d="M90 215 Q92 212 95 215 Q92 218 90 215 Z"/></g>
+        </svg>
         <div class="product-img-overlay"><p>法国蕾丝 · 三层雪纺裙摆 · 全棉内衬</p></div>
         <span class="product-tag">日常浪漫</span>
       </div>
@@ -616,8 +726,8 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
           <span>法国蕾丝</span><span>三层雪纺</span><span>棉质内衬</span><span>四色可选</span>
         </div>
         <div class="product-actions">
-          <a href="#" class="product-btn-more">了解更多</a>
-          <a href="#" class="product-btn-buy">微信下单</a>
+          <a href="#philosophy" class="product-btn-more">了解更多</a>
+          <a href="javascript:void(0)" class="product-btn-buy" onclick="document.getElementById('qrModal').style.display='flex'">微信下单</a>
         </div>
       </div>
     </div>
@@ -625,7 +735,25 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
     <!-- Product 2 -->
     <div class="product-card fade-in">
       <div class="product-img">
-        <div class="product-img-inner">garden</div>
+        <svg class="product-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-label="花园蓬蓬裙插画">
+          <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0E8E6"/><stop offset="1" stop-color="#F5EDED"/></linearGradient></defs>
+          <rect width="200" height="280" fill="url(#g2)"/>
+          <!-- puff dress silhouette -->
+          <path d="M88 38 Q100 33 112 38 L115 52 L108 56 L108 66 Q116 70 118 80 L120 92 Q125 105 128 120 L135 150 Q145 175 150 210 Q152 240 145 255 L55 255 Q48 240 50 210 Q55 175 65 150 L72 120 Q75 105 80 92 L82 80 Q84 70 92 66 L92 56 L85 52 Z" fill="none" stroke="#B0A090" stroke-width="1.2" stroke-linejoin="round"/>
+          <!-- round collar -->
+          <path d="M90 56 Q100 62 110 56" fill="none" stroke="#B0A090" stroke-width="1"/>
+          <!-- waist band -->
+          <path d="M72 92 Q100 96 128 92" fill="none" stroke="#B0A090" stroke-width="1.5"/>
+          <!-- puff skirt layers -->
+          <path d="M58 140 Q75 132 100 135 Q125 132 142 140" fill="none" stroke="#C4B8A8" stroke-width="1"/>
+          <path d="M54 175 Q75 166 100 169 Q125 166 146 175" fill="none" stroke="#C4B8A8" stroke-width="1"/>
+          <path d="M50 210 Q75 200 100 203 Q125 200 150 210" fill="none" stroke="#C4B8A8" stroke-width="1"/>
+          <!-- hem ruffle -->
+          <path d="M55 255 Q62 250 68 255 Q75 250 82 255 Q89 250 96 255 Q103 250 110 255 Q117 250 124 255 Q131 250 138 255 Q142 252 145 255" fill="none" stroke="#B0A090" stroke-width="1.2"/>
+          <!-- watercolor flowers -->
+          <g fill="none" stroke="#C4A3A0" stroke-width=".8"><circle cx="78" cy="120" r="3"/><path d="M78 117 L78 123 M75 120 L81 120"/><circle cx="120" cy="155" r="3"/><path d="M120 152 L120 158 M117 155 L123 155"/><circle cx="85" cy="190" r="2.5"/><circle cx="115" cy="225" r="2.5"/><circle cx="70" cy="230" r="2"/></g>
+          <g fill="none" stroke="#B8936E" stroke-width=".6"><path d="M78 113 Q76 110 74 113"/><path d="M120 148 Q122 145 124 148"/></g>
+        </svg>
         <div class="product-img-overlay"><p>手绘水彩印花 · 三层欧根纱 · 可机洗</p></div>
         <span class="product-tag">手工蕾丝</span>
       </div>
@@ -638,8 +766,8 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
           <span>手绘印花</span><span>欧根纱裙摆</span><span>弹力腰封</span><span>可机洗</span>
         </div>
         <div class="product-actions">
-          <a href="#" class="product-btn-more">了解更多</a>
-          <a href="#" class="product-btn-buy">微信下单</a>
+          <a href="#philosophy" class="product-btn-more">了解更多</a>
+          <a href="javascript:void(0)" class="product-btn-buy" onclick="document.getElementById('qrModal').style.display='flex'">微信下单</a>
         </div>
       </div>
     </div>
@@ -647,7 +775,30 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
     <!-- Product 3 -->
     <div class="product-card fade-in">
       <div class="product-img">
-        <div class="product-img-inner">étoile</div>
+        <svg class="product-svg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-label="珠片星夜吊带裙插画">
+          <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D252A"/><stop offset="1" stop-color="#2D1D20"/></linearGradient></defs>
+          <rect width="200" height="280" fill="url(#g3)"/>
+          <!-- slip dress silhouette -->
+          <path d="M90 45 L88 50 L82 52 L80 60 L85 65 L88 80 L90 100 L92 130 L94 165 L96 200 L98 240 L100 250 L102 240 L104 200 L106 165 L108 130 L110 100 L112 80 L115 65 L120 60 L118 52 L112 50 L110 45 L100 42 Z" fill="none" stroke="#C4A3A0" stroke-width="1.2" stroke-linejoin="round"/>
+          <!-- thin straps -->
+          <path d="M90 45 L82 30 M110 45 L118 30" fill="none" stroke="#C4A3A0" stroke-width="1"/>
+          <!-- bead gradient: dense at top, sparse at bottom -->
+          <g fill="#C4A3A0"><circle cx="93" cy="70" r="1.2"/><circle cx="97" cy="68" r="1.2"/><circle cx="103" cy="70" r="1.2"/><circle cx="107" cy="68" r="1.2"/>
+          <circle cx="91" cy="78" r="1"/><circle cx="95" cy="76" r="1"/><circle cx="99" cy="78" r="1"/><circle cx="105" cy="76" r="1"/><circle cx="109" cy="78" r="1"/>
+          <circle cx="92" cy="86" r="1"/><circle cx="96" cy="84" r="1"/><circle cx="102" cy="84" r="1"/><circle cx="108" cy="86" r="1"/>
+          <circle cx="93" cy="94" r="1"/><circle cx="99" cy="92" r="1"/><circle cx="105" cy="94" r="1"/>
+          <circle cx="94" cy="102" r=".9"/><circle cx="102" cy="100" r=".9"/>
+          <circle cx="95" cy="110" r=".9"/><circle cx="103" cy="108" r=".9"/>
+          <circle cx="96" cy="120" r=".8"/><circle cx="102" cy="118" r=".8"/>
+          <circle cx="97" cy="130" r=".8"/>
+          <circle cx="98" cy="142" r=".7"/>
+          <circle cx="99" cy="155" r=".6"/>
+          <circle cx="100" cy="170" r=".5"/></g>
+          <!-- sparkle stars -->
+          <g fill="none" stroke="#C4A3A0" stroke-width=".5"><path d="M70 100 L70 106 M67 103 L73 103"/><path d="M130 90 L130 96 M127 93 L133 93"/><path d="M60 140 L60 144 M58 142 L62 142"/><path d="M140 130 L140 134 M138 132 L142 132"/><path d="M75 180 L75 184 M73 182 L77 182"/></g>
+          <!-- hem line -->
+          <path d="M96 250 Q100 253 104 250" fill="none" stroke="#C4A3A0" stroke-width="1.2"/>
+        </svg>
         <div class="product-img-overlay"><p>600+手工珠片 · 真丝内衬 · 每月限量8条</p></div>
         <span class="product-tag">重工定制</span>
       </div>
@@ -660,8 +811,8 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
           <span>600+珠片</span><span>真丝内衬</span><span>每月8条</span><span>可绣名字</span>
         </div>
         <div class="product-actions">
-          <a href="#" class="product-btn-more">了解更多</a>
-          <a href="#" class="product-btn-buy">微信下单</a>
+          <a href="#atelier" class="product-btn-more">了解更多</a>
+          <a href="javascript:void(0)" class="product-btn-buy" onclick="document.getElementById('qrModal').style.display='flex'">微信下单</a>
         </div>
       </div>
     </div>
@@ -761,6 +912,31 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" style="background:#fff;padding:4rem 2rem">
+  <p class="section-tag">FAQ</p>
+  <h2 class="section-title">常见问题</h2>
+  <p class="section-sub">关于尺码、护理、定制和售后——你想知道的都在这里。</p>
+  <div class="faq-list" style="max-width:680px;margin:0 auto">
+    <details class="faq-item">
+      <summary>尺码怎么选？</summary>
+      <div class="faq-answer"><p>按背长和胸围来选：XS 适合约克夏/小体马尔济斯（胸围 28-34cm），S 适合马尔济斯/西施（胸围 34-40cm）。不确定的话量一下发给我们，免费帮你推荐。</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>日常怎么护理？</summary>
+      <div class="faq-answer"><p>日常款套洗衣袋机洗，轻柔模式。蕾丝款和重工定制款建议手洗、平铺晾干。具体护理方法吊牌上都有，也可以随时问客服。</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>定制流程是什么？</summary>
+      <div class="faq-answer"><p>① 告诉我们犬种和想法 → ② 出设计稿确认 → ③ 手作制作（2-3 周）→ ④ 寄出。定制款可绣名字，内衬绣专属编号。点导航「定制」填表即可开始。</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>退换政策？</summary>
+      <div class="faq-answer"><p>7 天无理由退换，尺码不合适免费换码。定制款因独一无二不支持无理由退换，但尺寸问题我们负责调整到满意为止。</p></div>
+    </details>
+  </div>
+</section>
+
 <!-- Contact -->
 <section class="contact fade-in" id="contact">
   <p class="section-tag">Nous Contacter</p>
@@ -828,17 +1004,17 @@ footer{background:#1F1A1A;color:#999090;padding:5rem 2rem 2rem}
       <div class="footer-social">
         <a href="#" class="soc-circle" title="微信" onclick="document.getElementById('qrModal').style.display='flex';return false">💬<span>微信</span></a>
         <a href="https://weibo.com/u/8492452669" target="_blank" rel="noopener" class="soc-circle">📢<span>微博</span></a>
-        <a href="#" class="soc-circle" title="小红书">📕<span>小红书</span></a>
-        <a href="#" class="soc-circle" title="抖音">🎵<span>抖音</span></a>
-        <a href="#" class="soc-circle" title="哔哩哔哩">📺<span>B站</span></a>
+        <a href="https://www.xiaohongshu.com/user/profile/DreamystPet" target="_blank" rel="noopener" class="soc-circle" title="小红书">📕<span>小红书</span></a>
+        <a href="#contact" class="soc-circle" title="抖音">🎵<span>抖音</span></a>
+        <a href="#contact" class="soc-circle" title="哔哩哔哩">📺<span>B站</span></a>
       </div>
     </div>
     <div>
       <h4>常见问题</h4>
-      <a href="#">尺码指南</a>
-      <a href="#">护理说明</a>
-      <a href="#">定制流程</a>
-      <a href="#">退换说明</a>
+      <a href="#faq">尺码指南</a>
+      <a href="#faq">护理说明</a>
+      <a href="#faq">定制流程</a>
+      <a href="#faq">退换说明</a>
     </div>
     <div>
       <h4>关于品牌</h4>
@@ -977,6 +1153,15 @@ if(contactForm){
     <p>扫码添加微信</p>
   </div>
 </div>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" aria-label="返回顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<script>
+// Back to top visibility
+var backTop=document.getElementById('backTop');
+window.addEventListener('scroll',function(){backTop.classList.toggle('visible',window.scrollY>600)});
+</script>
 
 </body>
 </html>
