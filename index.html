@@ -2191,72 +2191,16 @@ function pvRenderReward(){
   }).join('');
 }
 function pvJoin(){
-  if(pvState.isMember)return;
-  pvState.isMember=true;
-  pvState.userGrowth=68000;
-  pvState.beans+=1000;
-  pvState.memberSince=new Date().toISOString().slice(0,10);
-  pvSave();
-  pvRenderAll();
-  showToast('入会成功 · 赠 1,000 宠豆 · 直升 Lv.7');
+  showToast('请下载 APP 开通会员');
+  openAppOvl();
 }
 function pvCheckin(){
-  var todayStr=new Date().toISOString().slice(0,10);
-  if(pvState.lastCheckinDate===todayStr)return;
-  var earned=pvState.isMember?50:25;
-  pvState.beans+=earned;
-  pvState.checkinStreak+=1;
-  pvState.userGrowth+=25;
-  pvState.checkinHistory.push(todayStr);
-  if(pvState.checkinHistory.length>31)pvState.checkinHistory=pvState.checkinHistory.slice(-31);
-  pvState.lastCheckinDate=todayStr;
-  if(pvState.checkinStreak%30===0){pvState.beans+=500;showToast('连签30天 +500 宠豆！');}
-  else if(pvState.checkinStreak%7===0){pvState.beans+=100;showToast('连签7天 +100 宠豆！');}
-  else{showToast('签到成功 +'+earned+' 宠豆');}
-  pvSave();
-  pvRenderAll();
+  showToast('请下载 APP 签到');
+  openAppOvl();
 }
 function pvOpenRwModal(id){
-  var p=pvProducts.find(function(x){return x.id===id;});
-  if(!p)return;
-  var body=document.getElementById('pvRwMbody');
-  if(!pvState.isMember){
-    body.innerHTML='<div class="notice">兑换实物需开通会员<br>JOIN MEMBERSHIP TO REDEEM</div>'
-      +'<h3>'+p.name+'</h3>'
-      +'<div class="en">'+p.en+'</div>'
-      +'<p class="desc">'+p.desc+'</p>'
-      +'<div class="cost"><span class="v">'+p.beans+'</span><span class="u">豆</span></div>'
-      +'<div class="actions"><button class="cancel" onclick="pvCloseRwModal()">关闭</button>'
-      +'<button class="confirm" onclick="pvCloseRwModal();goView(\'privileges\');pvScrollTop()">去入会</button></div>';
-  }else if(pvState.beans<p.beans){
-    body.innerHTML='<h3>'+p.name+'</h3>'
-      +'<div class="en">'+p.en+'</div>'
-      +'<p class="desc">'+p.desc+'</p>'
-      +'<div class="cost"><span class="v">'+p.beans+'</span><span class="u">豆</span>'
-      +'<span class="after">余额 <b>'+pvState.beans+'</b> 豆</span></div>'
-      +'<div class="notice" style="border-color:var(--line-strong);color:var(--ink-soft)">宠豆不足，继续签到积累</div>'
-      +'<div class="actions"><button class="cancel" onclick="pvCloseRwModal()">关闭</button></div>';
-  }else{
-    body.innerHTML='<h3>'+p.name+'</h3>'
-      +'<div class="en">'+p.en+'</div>'
-      +'<p class="desc">'+p.desc+'</p>'
-      +'<div class="cost"><span class="v">'+p.beans+'</span><span class="u">豆</span>'
-      +'<span class="after">兑换后余额 <b>'+(pvState.beans-p.beans)+'</b> 豆</span></div>'
-      +'<div class="addr">'
-      +'<label>收货地址 · Shipping Address</label>'
-      +'<input type="text" id="pvAddr" placeholder="请输入详细收货地址">'
-      +'</div>'
-      +'<div class="addr-row">'
-      +'<div><label>姓名 · Name</label><input type="text" id="pvName" placeholder="收件人姓名"></div>'
-      +'<div><label>电话 · Phone</label><input type="text" id="pvPhone" placeholder="联系电话"></div>'
-      +'</div>'
-      +'<div class="actions" style="margin-top:20px">'
-      +'<button class="cancel" onclick="pvCloseRwModal()">取消</button>'
-      +'<button class="confirm" onclick="pvConfirmRedeem('+id+')">确认兑换</button>'
-      +'</div>';
-  }
-  document.getElementById('pvRwModal').classList.add('open');
-  document.body.style.overflow='hidden';
+  showToast('请下载 APP 兑换礼品');
+  openAppOvl();
 }
 function pvConfirmRedeem(id){
   var p=pvProducts.find(function(x){return x.id===id;});
